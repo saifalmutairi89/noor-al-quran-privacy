@@ -1,0 +1,136 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>سياسة الخصوصية · نور القرآن | Privacy Policy · Noor Al-Quran</title>
+<style>
+  :root { --bg: #faf7f0; --fg: #1b2a27; --muted: #5b6b67; --card: #ffffff; --line: #e3dccb; --accent: #0e5a4e; --gold: #c9a04e; }
+  @media (prefers-color-scheme: dark) { :root { --bg: #0b1614; --fg: #e8efec; --muted: #a9bab5; --card: #14211e; --line: #2a3a36; --accent: #5fc2a8; --gold: #e9d3a0; } }
+  body { margin: 0; background: var(--bg); color: var(--fg); font: 17px/1.8 -apple-system, "Segoe UI", "Noto Sans Arabic", Tahoma, sans-serif; }
+  main { max-width: 760px; margin: 0 auto; padding: 32px 16px 64px; }
+  header { border-bottom: 2px solid var(--gold); margin-bottom: 24px; }
+  h1 { color: var(--accent); margin: 0 0 4px; font-size: 1.7rem; }
+  h2 { color: var(--accent); font-size: 1.2rem; margin: 28px 0 8px; }
+  p, li { margin: 6px 0; }
+  ul { padding-inline-start: 1.3em; }
+  .meta { color: var(--muted); font-size: .95rem; }
+  .lang { background: var(--card); border: 1px solid var(--line); border-radius: 14px; padding: 8px 20px 20px; margin: 24px 0; }
+  .en { direction: ltr; text-align: left; }
+  table { width: 100%; border-collapse: collapse; font-size: .95rem; }
+  th, td { border: 1px solid var(--line); padding: 8px; vertical-align: top; text-align: start; }
+  th { background: color-mix(in srgb, var(--accent) 10%, transparent); }
+  a { color: var(--accent); }
+  nav a { margin-inline-end: 16px; }
+</style>
+</head>
+<body>
+<main>
+<header>
+  <h1>سياسة الخصوصية لتطبيق «نور القرآن»</h1>
+  <p class="meta">آخر تحديث: 28 أكتوبر 2026 · <a href="#en">English</a></p>
+</header>
+
+<section class="lang" id="ar">
+<h2>الخلاصة</h2>
+<ul>
+  <li>التطبيق <strong>مجاني، بلا إعلانات، وبلا تتبّع</strong>. لا نبيع بياناتك ولا نشاركها لأغراض إعلانية، ولا نستخدم أدوات تحليلات أو تتبّع.</li>
+  <li>يعمل التطبيق كاملاً <strong>بدون حساب</strong>، وعندها تبقى بياناتك على جهازك فقط.</li>
+  <li>الحساب <strong>اختياري</strong>، وفائدته حفظ تقدّمك ونقله بين أجهزتك. ويمكنك حذفه نهائياً من داخل التطبيق في أي وقت.</li>
+</ul>
+
+<h2>1. ما يُحفظ على جهازك</h2>
+<p>يحفظ التطبيق على جهازك: لغتك، والوضع الذي اخترته، وإعدادات القراءة، والقارئ وسرعة التلاوة، وآخر موضع قراءة، والآيات التي تحفظها ومواعيد مراجعتها، وسجل نشاطك اليومي (عدد الحروف المقروءة، ودقائق الاستماع والتسميع، وعدد المراجعات)، وخطة الختمة. تبقى هذه البيانات على جهازك ولا تُرسل إلى أي جهة ما لم تُنشئ حساباً. وتُحذف بحذف التطبيق.</p>
+
+<h2>2. ما يُرسل عبر الإنترنت لتشغيل التطبيق</h2>
+<ul>
+  <li><strong>محتوى القرآن:</strong> عند طلب تلاوة أو تفسير أو بيانات الأحكام، يرسل التطبيق طلباً إلى خادمنا (على Supabase)، ويجلبها خادمنا من Quran Foundation. يتضمن الطلب ما تريد عرضه (مثل رقم السورة والآية والتفسير المختار) فقط، لا هويتك.</li>
+  <li><strong>الحماية من إساءة الاستخدام:</strong> يحتفظ خادمنا بعدّاد مؤقت لعدد الطلبات من كل اتصال، مسجَّلاً تحت <strong>بصمة مشفّرة (SHA-256) من عنوان IP</strong> وليس العنوان نفسه، وتُحذف العدّادات القديمة تلقائياً.</li>
+  <li><strong>ملفات التلاوة الصوتية:</strong> تُشغَّل مباشرة من خوادم الصوت التي توفرها Quran Foundation، فيرى ذلك الخادم عنوان IP لجهازك كأي موقع تتصفحه.</li>
+</ul>
+
+<h2>3. الحساب (اختياري)</h2>
+<p>إن أنشأت حساباً بالبريد الإلكتروني أو بحساب Apple، نحفظ لدى مزوّد الخدمة Supabase (خوادمه في أوروبا):</p>
+<ul>
+  <li>بريدك الإلكتروني. وإن اخترت «إخفاء بريدي» في Apple، نحفظ البريد البديل الذي تعطيه Apple.</li>
+  <li>كلمة المرور، إن سجّلت بالبريد: تُحفظ مشفّرة لدى Supabase، ولا نطّلع عليها.</li>
+  <li>نسخة من البيانات المذكورة في البند 1، لنقل تقدّمك بين أجهزتك.</li>
+</ul>
+<p>بياناتك في الحساب محمية بحيث لا يقرأها أو يعدّلها إلا حسابك.</p>
+
+<h2>4. حذف حسابك</h2>
+<p>من داخل التطبيق: «الإعدادات» ثم «الحساب» ثم «حذف الحساب». يُحذف الحساب وكل البيانات المحفوظة فيه من خوادمنا نهائياً. أما ما على جهازك فيبقى حتى تحذف التطبيق.</p>
+
+<h2>5. المايكروفون</h2>
+<p>يطلب التطبيق إذن المايكروفون فقط عند بدء التدرّب على التلاوة. يبقى التسجيل في ذاكرة الجهاز أثناء التدرّب ثم يُترك، ولا يُرفع إلى أي خادم ولا يُحفظ. وإن تغيّر ذلك مستقبلاً لتصحيح التلاوة، سنحدّث هذه السياسة ونطلب موافقتك قبلها.</p>
+
+<h2>6. الأطفال</h2>
+<p>وضع الأطفال لا يحتاج حساباً ولا يجمع أي بيانات شخصية؛ كل ما فيه يبقى على الجهاز. وننصح بأن يُنشئ الحساب وليُّ الأمر إن رغب بذلك.</p>
+
+<h2>7. الجهات التي نستعين بها</h2>
+<table>
+  <tr><th>الجهة</th><th>الغرض</th></tr>
+  <tr><td>Supabase</td><td>الخادم، وتسجيل الدخول، وقاعدة بيانات الحسابات</td></tr>
+  <tr><td>Quran Foundation</td><td>التلاوات الصوتية وتوقيت الكلمات، والتفاسير، وبيانات التجويد</td></tr>
+  <tr><td>Apple</td><td>تسجيل الدخول بحساب Apple، إن اخترته</td></tr>
+</table>
+<p>نصوص المصحف والترجمات محفوظة داخل التطبيق، ولا يحتاج عرضها اتصالاً.</p>
+
+<h2>8. التغييرات والتواصل</h2>
+<p>إذا غيّرنا هذه السياسة نحدّث تاريخها أعلاه، وإن كان التغيير جوهرياً نُعلمك داخل التطبيق. للتواصل: <a href="mailto:saif66686305@gmail.com">saif66686305@gmail.com</a></p>
+</section>
+
+<section class="lang en" id="en" dir="ltr" lang="en">
+<h2>Privacy Policy for Noor Al-Quran</h2>
+<p class="meta">Last updated: October 28, 2026 · <a href="#ar">العربية</a></p>
+
+<h2>Summary</h2>
+<ul>
+  <li>The app is <strong>free, with no ads and no tracking</strong>. We do not sell your data or share it for advertising, and we use no analytics or tracking tools.</li>
+  <li>The whole app works <strong>without an account</strong>; your data then stays on your device only.</li>
+  <li>An account is <strong>optional</strong> and only carries your progress between your devices. You can delete it permanently from inside the app at any time.</li>
+</ul>
+
+<h2>1. What is stored on your device</h2>
+<p>Your language, chosen mode, reading settings, reciter and playback speed, last reading position, the verses you memorize and their review schedule, your daily activity log (letters read, minutes listening and reciting, number of reviews) and your khatma plan. This stays on your device and is sent nowhere unless you create an account. Deleting the app deletes it.</p>
+
+<h2>2. What is sent over the internet to run the app</h2>
+<ul>
+  <li><strong>Quran content:</strong> when you open a recitation, a tafsir or tajweed data, the app asks our server (on Supabase), which fetches it from Quran Foundation. The request names only what you want to see (such as the surah, verse and chosen tafsir), not who you are.</li>
+  <li><strong>Abuse protection:</strong> our server keeps a short-term count of requests per connection, stored under a <strong>one-way hash (SHA-256) of the IP address</strong>, never the address itself. Old counts are deleted automatically.</li>
+  <li><strong>Recitation audio</strong> plays directly from the audio servers provided by Quran Foundation, which see your device's IP address as any website does.</li>
+</ul>
+
+<h2>3. Your account (optional)</h2>
+<p>If you create an account with your email or with Sign in with Apple, our provider Supabase (servers in Europe) stores:</p>
+<ul>
+  <li>Your email address; if you choose "Hide My Email" with Apple, the relay address Apple gives us.</li>
+  <li>Your password, if you sign up by email: stored hashed by Supabase; we never see it.</li>
+  <li>A copy of the data listed in section 1, to carry your progress between devices.</li>
+</ul>
+<p>Account data is protected so that only your own account can read or change it.</p>
+
+<h2>4. Deleting your account</h2>
+<p>In the app: Settings, then Account, then Delete account. The account and all data saved with it are permanently deleted from our servers. Data on your device stays until you delete the app.</p>
+
+<h2>5. Microphone</h2>
+<p>The app asks for the microphone only when you start recitation practice. The recording stays in the device's memory during practice and is then discarded; it is not uploaded or saved. If that changes in future for recitation checking, we will update this policy and ask for your consent first.</p>
+
+<h2>6. Children</h2>
+<p>Kids mode needs no account and collects no personal data; everything stays on the device. We recommend that a parent creates an account if one is wanted.</p>
+
+<h2>7. Services we use</h2>
+<table>
+  <tr><th>Service</th><th>Purpose</th></tr>
+  <tr><td>Supabase</td><td>Server, sign-in and the accounts database</td></tr>
+  <tr><td>Quran Foundation</td><td>Recitation audio and word timings, tafsir, tajweed data</td></tr>
+  <tr><td>Apple</td><td>Sign in with Apple, if you choose it</td></tr>
+</table>
+<p>The Quran text and translations are built into the app and need no connection.</p>
+
+<h2>8. Changes and contact</h2>
+<p>If we change this policy we update the date above, and for significant changes we tell you in the app. Contact: <a href="mailto:saif66686305@gmail.com">saif66686305@gmail.com</a></p>
+</section>
+</main>
+</body>
+</html>
