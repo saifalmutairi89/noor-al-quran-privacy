@@ -41,8 +41,10 @@
 </head>
 <body>
 <main>
+  <p style="margin:0 0 6px"><a href="../app/" style="color:var(--accent); text-decoration:none">→ العودة إلى نور القرآن</a></p>
   <h1>التسميع المباشر</h1>
-  <p class="muted">اختر السورة واضغط «ابدأ»، ثم اقرأ بصوتك. يتابعك كلمة كلمة، وإذا أخطأت يوقفك ويُسمعك الصواب. كل شيء يعمل على جهازك، والصوت لا يخرج منه. صفحة تجريبية.</p>
+  <p class="muted">اختر السورة واضغط «ابدأ التسميع»، ثم اقرأ بصوتك. يتابعك كلمة كلمة، وإذا أخطأت يوقفك ويُسمعك الصواب. كل شيء يعمل على جهازك، والصوت لا يخرج منه.</p>
+  <p class="muted" style="border-inline-start:3px solid var(--near); padding-inline-start:8px">هذه أداة ذكاء اصطناعي تجريبية قد تخطئ، فهي للإعانة على المراجعة فقط، وليست بديلاً عن معلّمٍ متقن.</p>
 
   <div class="card" id="setup">
     <div class="row">
@@ -138,7 +140,11 @@ async function loadText() {
   for (const id of order) $('surah').add(new Option(`${id}. ${q[id - 1].name}`, id));
   $('surah').onchange = () => { fillFrom(); buildSurah(); };
   $('from').onchange = buildSurah;
+  // The app opens this page with ?surah=&from=.
+  const params = new URLSearchParams(location.search);
+  if (uthmani[+params.get('surah') - 1]) $('surah').value = params.get('surah');
   fillFrom();
+  if (+params.get('from') <= uthmani[$('surah').value - 1].verses.length) $('from').value = params.get('from') || 1;
   buildSurah();
 }
 
