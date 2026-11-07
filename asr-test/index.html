@@ -32,7 +32,17 @@
 
   <div class="card">
     <strong>١. تحميل النموذج</strong>
-    <p class="muted">حجمه نحو ١٠٠ ميغابايت، يُحمَّل مرة واحدة. يُفضّل الواي فاي.</p>
+    <p class="muted">يُحمَّل مرة واحدة. يُفضّل الواي فاي.</p>
+    <div style="display:flex; gap:8px; margin:8px 0">
+      <select id="modelPick" style="flex:1">
+        <option value="tiny">الصغير (أسرع، ٦٠ ميغابايت)</option>
+        <option value="model">الكبير (أدق قليلاً، ١٠٠ ميغابايت)</option>
+      </select>
+      <select id="devicePick" style="flex:1">
+        <option value="wasm">المعالج</option>
+        <option value="webgpu">معالج الرسوميات</option>
+      </select>
+    </div>
     <button id="load">تحميل النموذج</button>
     <progress id="bar" max="100" value="0" hidden></progress>
     <div id="loadInfo" class="muted"></div>
@@ -112,15 +122,29 @@ function fillAyahs() {
 function currentVerse() { return quran[$('surah').value - 1].verses[$('ayah').value - 1]; }
 function showVerse() { $('verse').textContent = currentVerse(); $('result').innerHTML = ''; }
 
+// Several cores need cross-origin isolation, which a small service worker adds.
+if (!crossOriginIsolated && 'serviceWorker' in navigator) {
+  navigator.serviceWorker.register('coi-sw.js').then((r) => {
+    if (!navigator.serviceWorker.controller) location.reload();
+  }).catch((e) => log('service worker: ' + e));
+}
+const threads = crossOriginIsolated ? Math.min(4, navigator.hardwareConcurrency || 1) : 1;
+env.backends.onnx.wasm.numThreads = threads;
+if (!('gpu' in navigator)) $('devicePick').options[1].disabled = true;
+log(`threads: ${threads}, webgpu: ${'gpu' in navigator}`);
+
 $('load').onclick = async () => {
   $('load').disabled = true;
+  $('modelPick').disabled = $('devicePick').disabled = true;
+  const name = $('modelPick').value, device = $('devicePick').value;
   $('bar').hidden = false;
   const files = {};
   const t0 = performance.now();
   try {
-    asr = await pipeline('automatic-speech-recognition', 'model', {
-      dtype: 'q8',
-      device: 'wasm',
+    asr = await pipeline('automatic-speech-recognition', name, {
+      // The graphics chip runs the encoder in full precision (only the small model has it).
+      dtype: device === 'webgpu' && name === 'tiny' ? { encoder_model: 'fp32', decoder_model_merged: 'q8' } : 'q8',
+      device,
       progress_callback: (p) => {
         if (p.status === 'progress' && p.total) {
           files[p.file] = [p.loaded, p.total];
@@ -129,11 +153,12 @@ $('load').onclick = async () => {
         }
       },
     });
-    $('loadInfo').textContent = `جاهز ✓ (التحميل والتجهيز: ${((performance.now() - t0) / 1000).toFixed(0)} ثانية)`;
+    $('loadInfo').textContent = `جاهز ✓ (التحميل والتجهيز: ${((performance.now() - t0) / 1000).toFixed(0)} ثانية · ${name === 'tiny' ? 'الصغير' : 'الكبير'} · ${device === 'webgpu' ? 'الرسوميات' : `المعالج ×${threads}`})`;
     $('rec').disabled = false;
   } catch (e) {
     $('loadInfo').textContent = 'تعذّر تحميل النموذج: ' + e;
     $('load').disabled = false;
+    $('modelPick').disabled = $('devicePick').disabled = false;
   }
 };
 
@@ -183,7 +208,7 @@ async function check(audio, seconds) {
     <p>${wrong === 0 ? '✅ ممتاز، لم يجد خطأً' : `⚠️ كلمات لم يسمعها كما هي: ${wrong}`}</p>
     <p class="muted">سمع: ${out.text}</p>
     <p class="muted"><strong>السرعة:</strong> تلاوة ${seconds.toFixed(1)} ثانية فُهمت في ${took.toFixed(1)} ثانية</p>`;
-  log(`${$('surah').value}:${$('ayah').value} audio ${seconds.toFixed(1)}s, took ${took.toFixed(1)}s`);
+  log(`${$('surah').value}:${$('ayah').value} ${$('modelPick').value}/${$('devicePick').value}/${threads} audio ${seconds.toFixed(1)}s, took ${took.toFixed(1)}s`);
 }
 
 loadQuran();
