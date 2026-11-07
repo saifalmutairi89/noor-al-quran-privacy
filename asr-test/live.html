@@ -345,8 +345,8 @@ let listening = false, epoch = 0, unknownStreak = 0;
 let ctx = null, stream = null, node = null;
 let seg = [], segSpeech = 0, silence = 0, noise = 0.004, preroll = [];
 const FRAME = 480;          // 30 ms at 16 kHz
-const PAUSE_FRAMES = 22;    // ~0.66 s of quiet ends a stretch
-const MAX_FRAMES = 500;     // 15 s at most per stretch
+const PAUSE_FRAMES = 16;    // ~0.5 s of quiet ends a stretch
+const MAX_FRAMES = 300;     // 9 s at most per stretch
 
 const workletCode = `
 class Tap extends AudioWorkletProcessor {
