@@ -1,0 +1,22 @@
+{
+  "package": "quran-json 3.1.2 (https://github.com/risan/quran-json), CC BY-SA 4.0",
+  "text": "Uthmani text, Madinah Mushaf by the King Fahd Glorious Quran Printing Complex, via QuranEnc (quranenc.com)",
+  "transliteration": "Tanzil.net English transliteration (tanzil.net/trans/en.transliteration)",
+  "translations": {
+    "en": "Mohammed Marmaduke William Pickthall, via Tanzil.net (en.pickthall)",
+    "ur": "Abul A'la Maududi, via Tanzil.net",
+    "id": "Indonesian Ministry of Religious Affairs, via QuranEnc",
+    "fr": "Muhammad Hamidullah, via Tanzil.net",
+    "bn": "Muhiuddin Khan, via Tanzil.net"
+  },
+  "sha256": {
+    "quran.json": "d8a8adff387f60ce3ff7dbe3238dd9b27120bfe29d8fcb07ad2e89cad37cefd4",
+    "quran_transliteration.json": "36369741f23fe2b64fdcca39d047659256dab7b40f1717aefcb6198c514313a0",
+    "quran_en.json": "bae3acab517304dc2684d65949a00f31000a92818041cefabc234663da99d7a3",
+    "quran_ur.json": "fe9c2ff72c287b3df8390b16eb27bb6de0210f20b417a5659b1fbdc29e58325f",
+    "quran_id.json": "75d4672e11a638fc4e374df2ee9fa4d2257c562de9a5eb824532514e5c59d0ee",
+    "quran_fr.json": "2efc6d899d9504d63c4d62efa4fc89d38f99105237b7030b01b12f24bc1ebb8e",
+    "quran_bn.json": "894086074f0e637d0488de1e6cb48a729dd60d38bfde3326bb6a2c66bf171a71",
+    "en.pickthall.txt": "4aabbfa9d96796f5a6b0217d2c39dce1a3084f772bf6f2650e37082a774e3cc7"
+  }
+}
