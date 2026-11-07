@@ -5,6 +5,9 @@ self.addEventListener('activate', (e) => e.waitUntil(self.clients.claim()));
 self.addEventListener('fetch', (e) => {
   const req = e.request;
   if (req.cache === 'only-if-cached' && req.mode !== 'same-origin') return;
+  // Audio and video stream in pieces (range requests), which Safari can't play
+  // through a service worker. They load with CORS, which isolation accepts.
+  if (req.destination === 'audio' || req.destination === 'video') return;
   e.respondWith(
     fetch(req).then((res) => {
       if (res.status === 0) return res;

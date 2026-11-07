@@ -461,7 +461,7 @@ const player = new Audio();
 player.crossOrigin = 'anonymous';
 player.preload = 'auto';
 player.addEventListener('timeupdate', () => { if (stopAtMs && player.currentTime * 1000 >= stopAtMs) { player.pause(); stopAtMs = 0; } });
-player.addEventListener('error', () => log('تعذّر تشغيل صوت القارئ: ' + (player.error?.message || player.error?.code)));
+player.addEventListener('error', () => { const m = 'تعذّر تشغيل صوت القارئ: ' + (player.error?.message || player.error?.code); log(m); $('status').textContent = m; });
 
 async function loadRecitation() {
   const surah = +$('surah').value;
@@ -479,11 +479,11 @@ async function loadRecitation() {
 
 function playVerse(v) {
   const t = audioCache?.timings.get(v);
-  if (!t) { log('صوت القارئ لم يُحمَّل بعد'); loadRecitation(); return; }
+  if (!t) { $('status').textContent = 'صوت القارئ يُحمَّل، اضغط مرة ثانية بعد ثوانٍ.'; loadRecitation(); return; }
   const seek = () => { player.currentTime = t.timestamp_from / 1000; };
   stopAtMs = t.timestamp_to;
   if (player.readyState >= 1) seek(); else player.addEventListener('loadedmetadata', seek, { once: true });
-  player.play().catch((e) => log('تعذّر تشغيل صوت القارئ: ' + e));
+  player.play().catch((e) => { log('تعذّر تشغيل صوت القارئ: ' + e); $('status').textContent = 'تعذّر تشغيل صوت القارئ: ' + e.name; });
 }
 
 $('listen').onclick = () => playVerse(mistakeVerse);
