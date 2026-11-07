@@ -431,6 +431,7 @@ function handleResult(text, forced) {
   }
   unknownStreak = 0;
   paint();
+  prefetchAround();
   if (r.mistakes.length) return showMistake(r.mistakes);
   if (cursor >= words.length) {
     stopListening('🎉 أحسنت! أتممت السورة بلا أخطاء ظاهرة.');
@@ -453,37 +454,42 @@ function showMistake(list) {
   playVerse(mistakeVerse); // may be blocked on iPhone; the listen button always works
 }
 
-// The surah's recitation and verse timings are fetched when listening starts,
-// so a tap on "listen" can start playing at once: iPhones only allow sound
-// that starts within the tap itself.
-let audioCache = null, stopAtMs = 0;
+// Each verse's recitation is a small file of its own. The verse being read and
+// the next one are downloaded ahead, while the user recites, so the right
+// verse plays the moment it is needed (iPhones also only allow sound that
+// starts within a tap, so nothing may wait on the network then).
+const VERSE_AUDIO = 'https://verses.quran.com/';
+const verseAudio = new Map(); // "s:v" -> Promise<blob URL>
 const player = new Audio();
-player.crossOrigin = 'anonymous';
-player.preload = 'auto';
-player.addEventListener('timeupdate', () => { if (stopAtMs && player.currentTime * 1000 >= stopAtMs) { player.pause(); stopAtMs = 0; } });
 player.addEventListener('error', () => { const m = 'تعذّر تشغيل صوت القارئ: ' + (player.error?.message || player.error?.code); log(m); $('status').textContent = m; });
 
-async function loadRecitation() {
+function prefetchVerse(v) {
   const surah = +$('surah').value;
-  if (audioCache?.surah === surah) return;
-  try {
-    const r = await fetch(`${PROXY}/chapter_recitations/${RECITER}/${surah}?segments=true`, { headers: { apikey: KEY, Authorization: `Bearer ${KEY}` } });
-    const j = (await r.json()).audio_file;
-    audioCache = { surah, url: j.audio_url, timings: new Map(j.timestamps.map((t) => [+t.verse_key.split(':')[1], t])) };
-    player.src = audioCache.url;
-    player.load();
-  } catch (e) {
-    log('تعذّر جلب صوت القارئ: ' + e);
-  }
+  const key = `${surah}:${v}`;
+  if (!v || v > uthmani[surah - 1].verses.length || verseAudio.has(key)) return;
+  const job = fetch(`${PROXY}/recitations/${RECITER}/by_ayah/${key}`, { headers: { apikey: KEY, Authorization: `Bearer ${KEY}` } })
+    .then((r) => r.json())
+    .then((j) => fetch(VERSE_AUDIO + j.audio_files[0].url))
+    .then((r) => r.blob())
+    .then((b) => URL.createObjectURL(b))
+    .catch((e) => { verseAudio.delete(key); log('تعذّر جلب صوت الآية: ' + e); return null; });
+  verseAudio.set(key, job);
+}
+
+// Called as the reading moves on: keep this verse and the next one ready.
+function prefetchAround() {
+  const v = words[Math.min(cursor, words.length - 1)]?.verse || +$('from').value;
+  prefetchVerse(v || 1);
+  prefetchVerse((v || 1) + 1);
 }
 
 function playVerse(v) {
-  const t = audioCache?.timings.get(v);
-  if (!t) { $('status').textContent = 'صوت القارئ يُحمَّل، اضغط مرة ثانية بعد ثوانٍ.'; loadRecitation(); return; }
-  const seek = () => { player.currentTime = t.timestamp_from / 1000; };
-  stopAtMs = t.timestamp_to;
-  if (player.readyState >= 1) seek(); else player.addEventListener('loadedmetadata', seek, { once: true });
-  player.play().catch((e) => { log('تعذّر تشغيل صوت القارئ: ' + e); $('status').textContent = 'تعذّر تشغيل صوت القارئ: ' + e.name; });
+  const key = `${+$('surah').value}:${v}`;
+  const ready = verseAudio.get(key);
+  // Start within the tap with whatever is ready; a still-loading verse starts when it arrives.
+  player.pause();
+  if (ready) ready.then((url) => { if (!url) return; player.src = url; player.play().catch((e) => { $('status').textContent = 'اضغط «استمع للآية» لسماع الصواب.'; log('play: ' + e); }); });
+  else { prefetchVerse(v); if (verseAudio.has(key)) playVerse(v); }
 }
 
 $('listen').onclick = () => playVerse(mistakeVerse);
@@ -492,7 +498,7 @@ $('resume').onclick = () => {
   for (let i = cursor; i < words.length; i++) state.delete(i);
   startListening();
 };
-$('start').onclick = () => (asr ? (player.pause(), loadRecitation(), startListening().catch((e) => $('status').textContent = 'تعذّر تشغيل المايكروفون: ' + e)) : loadModel());
+$('start').onclick = () => (asr ? (player.pause(), prefetchAround(), startListening().catch((e) => $('status').textContent = 'تعذّر تشغيل المايكروفون: ' + e)) : loadModel());
 $('stop').onclick = () => stopListening('أوقفت التسميع. اضغط «ابدأ التسميع» لتكمل من حيث توقفت.');
 
 loadText();
