@@ -1,0 +1,491 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>التسميع المباشر · نور القرآن</title>
+<style>
+  @font-face { font-family: Hafs; src: url('../app/assets/assets/fonts/UthmanicHafs1Ver18.ttf'); }
+  :root { --bg: #faf7f0; --fg: #1b2a27; --muted: #5b6b67; --card: #fff; --line: #e3dccb; --accent: #0e5a4e; --ok: #1e7a4f; --near: #b7791f; --bad: #c0261a; --cur: #f3e7c4; }
+  @media (prefers-color-scheme: dark) { :root { --bg: #0b1614; --fg: #e8efec; --muted: #a9bab5; --card: #14211e; --line: #2a3a36; --accent: #5fc2a8; --ok: #6fd3a0; --near: #f0b75a; --bad: #ff8a80; --cur: #3a3420; } }
+  * { box-sizing: border-box; }
+  body { margin: 0; background: var(--bg); color: var(--fg); font: 17px/1.7 -apple-system, "Segoe UI", Tahoma, sans-serif; }
+  main { max-width: 680px; margin: 0 auto; padding: 16px 16px 160px; }
+  h1 { color: var(--accent); font-size: 1.4rem; margin: 0 0 2px; }
+  .muted { color: var(--muted); font-size: .9rem; }
+  .card { background: var(--card); border: 1px solid var(--line); border-radius: 16px; padding: 12px 14px; margin: 12px 0; }
+  .row { display: flex; gap: 8px; margin: 8px 0; }
+  select, button { font: inherit; }
+  select { flex: 1; min-width: 0; padding: 8px; border-radius: 10px; border: 1px solid var(--line); background: var(--card); color: var(--fg); }
+  button { border: 0; border-radius: 999px; padding: 12px 18px; background: var(--accent); color: #fff; }
+  button.secondary { background: transparent; color: var(--accent); border: 1px solid var(--accent); }
+  button:disabled { opacity: .45; }
+  progress { width: 100%; }
+  #mushaf { font-family: Hafs, serif; font-size: 1.75rem; line-height: 2.35; text-align: justify; }
+  .w { border-radius: 6px; padding: 0 1px; transition: color .2s; }
+  .w.ok { color: var(--ok); }
+  .w.near { color: var(--near); }
+  .w.bad { color: var(--bad); text-decoration: underline wavy; }
+  .w.cur { background: var(--cur); }
+  .num { color: var(--muted); font-size: 1.1rem; margin: 0 4px; }
+  #bar { position: fixed; inset: auto 0 0 0; background: var(--card); border-top: 1px solid var(--line); padding: 10px 16px calc(10px + env(safe-area-inset-bottom)); }
+  #bar .inner { max-width: 680px; margin: 0 auto; }
+  #status { min-height: 1.6em; margin-bottom: 6px; }
+  #stop { display: none; }
+  #mistake { display: none; border-color: var(--bad); }
+  #mistake .right { font-family: Hafs, serif; font-size: 1.8rem; color: var(--ok); }
+  .dot { display: inline-block; width: 10px; height: 10px; border-radius: 50%; background: var(--bad); margin-inline-end: 6px; animation: pulse 1s infinite; }
+  @keyframes pulse { 50% { opacity: .3; } }
+  #log { white-space: pre-wrap; font-size: .8rem; color: var(--muted); }
+</style>
+</head>
+<body>
+<main>
+  <h1>التسميع المباشر</h1>
+  <p class="muted">اختر السورة واضغط «ابدأ»، ثم اقرأ بصوتك. يتابعك كلمة كلمة، وإذا أخطأت يوقفك ويُسمعك الصواب. كل شيء يعمل على جهازك، والصوت لا يخرج منه. صفحة تجريبية.</p>
+
+  <div class="card" id="setup">
+    <div class="row">
+      <select id="surah"></select>
+      <select id="from" title="ابدأ من الآية"></select>
+    </div>
+    <div class="row">
+      <select id="modelPick">
+        <option value="model">النموذج الكبير (أدق)</option>
+        <option value="tiny">النموذج الصغير (أسرع)</option>
+      </select>
+      <select id="devicePick">
+        <option value="wasm">المعالج</option>
+        <option value="webgpu">معالج الرسوميات</option>
+      </select>
+    </div>
+    <progress id="loadBar" max="100" value="0" hidden></progress>
+    <div id="loadInfo" class="muted"></div>
+  </div>
+
+  <div class="card" id="mistake">
+    <strong>⛔ توقّف: يوجد خطأ</strong>
+    <div id="mistakeText" style="margin:6px 0"></div>
+    <div class="muted">الصواب:</div>
+    <div class="right" id="mistakeRight"></div>
+    <div class="row">
+      <button id="listen" class="secondary" style="flex:1">🔊 استمع للآية</button>
+      <button id="resume" style="flex:1">أكمل من هنا</button>
+    </div>
+  </div>
+
+  <div class="card"><div id="mushaf"></div></div>
+  <p class="muted">نص المصحف المعروض: مصحف المدينة (مجمع الملك فهد). نص المقارنة: <a href="https://tanzil.net">Tanzil Project</a> (Simple Clean).</p>
+  <div id="log"></div>
+</main>
+
+<div id="bar"><div class="inner">
+  <div id="status" class="muted">حمّل النموذج أولاً.</div>
+  <button id="start" style="width:100%">تحميل النموذج</button>
+  <button id="stop" class="secondary" style="width:100%">إيقاف</button>
+</div></div>
+
+<script type="module">
+import { pipeline, env } from 'https://cdn.jsdelivr.net/npm/@huggingface/transformers@4.3.2/dist/transformers.min.js';
+
+env.allowRemoteModels = false;
+env.allowLocalModels = true;
+env.localModelPath = './';
+const $ = (id) => document.getElementById(id);
+const log = (m) => { $('log').textContent += m + '\n'; };
+const PROXY = 'https://sexbbzewwqtaxsweigke.supabase.co/functions/v1/quran-proxy';
+const KEY = 'sb_publishable_ZAWSWQzVNSBqjBIOXO7QNg_v3N3cxDt';
+const RECITER = 7; // Mishary Rashid Alafasy
+const FIRST = [1, 112, 113, 114, 108, 103];
+const BASMALA = ['بسم', 'الله', 'الرحمن', 'الرحيم'];
+
+// ---------- Several cores need cross-origin isolation (added by a small service worker).
+if (!crossOriginIsolated && 'serviceWorker' in navigator) {
+  navigator.serviceWorker.register('coi-sw.js').then(() => {
+    if (!navigator.serviceWorker.controller) location.reload();
+  }).catch((e) => log('service worker: ' + e));
+}
+const threads = crossOriginIsolated ? Math.min(4, navigator.hardwareConcurrency || 1) : 1;
+env.backends.onnx.wasm.numThreads = threads;
+if (!('gpu' in navigator)) $('devicePick').options[1].disabled = true;
+try {
+  $('modelPick').value = localStorage.getItem('live.model') || 'model';
+  $('devicePick').value = localStorage.getItem('live.device') || 'wasm';
+} catch {}
+
+// ---------- Text. Words are compared by their letters only: no diacritics,
+// Quranic marks, alef or tatweel; hamza seats and taa marbuta unified.
+function skeleton(w) {
+  return w.replace(/[ؐ-ًؚ-ٰٟۖ-ۭـ]/g, '')
+    .replace(/[اأإآٱء]/g, '').replace(/ؤ/g, 'و').replace(/[ئى]/g, 'ي').replace(/ة/g, 'ه');
+}
+const isMark = (w) => /^[ۖ-ۭ]+$/.test(w);
+
+let uthmani = null; // [{id, name, verses: [text]}]
+const simple = new Map(); // "s:v" -> text (Tanzil Simple Clean, verbatim)
+
+async function loadText() {
+  const [q, t] = await Promise.all([
+    fetch('../app/assets/assets/quran/quran.json').then((r) => r.json()),
+    fetch('quran-simple-clean.txt').then((r) => r.text()),
+  ]);
+  uthmani = q;
+  for (const line of t.split('\n')) {
+    const p = line.split('|');
+    if (p.length === 3 && /^\d+$/.test(p[0])) simple.set(`${p[0]}:${p[1]}`, p[2]);
+  }
+  const order = [...FIRST, ...q.map((s) => s.id).filter((id) => !FIRST.includes(id))];
+  for (const id of order) $('surah').add(new Option(`${id}. ${q[id - 1].name}`, id));
+  $('surah').onchange = () => { fillFrom(); buildSurah(); };
+  $('from').onchange = buildSurah;
+  fillFrom();
+  buildSurah();
+}
+
+function fillFrom() {
+  const s = uthmani[$('surah').value - 1];
+  $('from').innerHTML = '';
+  s.verses.forEach((_, i) => $('from').add(new Option(`من الآية ${i + 1}`, i + 1)));
+}
+
+// The expected words of the surah, in Tanzil's spelling, each tied to the
+// Uthmani word it is shown in. Vocative يا is one word in the Mushaf.
+let words = [];   // {sk, simple, verse, u (span index), optional}
+let spans = [];   // Uthmani word <span>s
+let verseStart = new Map(); // verse -> first index in words
+
+function buildSurah() {
+  const id = +$('surah').value;
+  const s = uthmani[id - 1];
+  const from = +$('from').value || 1;
+  words = []; spans = []; verseStart = new Map();
+  const box = $('mushaf');
+  box.innerHTML = '';
+  // An optional Basmala (and isti'adha) may come first; extra words are never mistakes anyway.
+  if (id !== 1 && id !== 9) for (const w of BASMALA) words.push({ sk: skeleton(w), simple: w, verse: 0, u: -1, optional: true });
+  s.verses.forEach((text, i) => {
+    const v = i + 1;
+    if (v < from) return;
+    const u = text.split(' ');
+    let t = (simple.get(`${id}:${v}`) || '').split(' ').filter((w) => w && !isMark(w));
+    if (v === 1 && id !== 1 && id !== 9 && t.slice(0, 4).join(' ') === BASMALA.join(' ')) t = t.slice(4);
+    // Map each Tanzil word to an Uthmani word.
+    let map = null;
+    if (t.length === u.length) map = t.map((_, j) => j);
+    else {
+      map = []; let k = 0, extra = t.length - u.length;
+      t.forEach((w, j) => { map.push(k); if (extra > 0 && ['يا', 'ها', 'ويا'].includes(w) && j + 1 < t.length) extra--; else k++; });
+      if (k !== u.length || extra) map = t.map((_, j) => Math.min(u.length - 1, Math.floor((j * u.length) / t.length)));
+    }
+    const base = spans.length;
+    u.forEach((w) => {
+      const el = document.createElement('span');
+      el.className = 'w'; el.textContent = w;
+      box.append(el, ' ');
+      spans.push(el);
+    });
+    const n = document.createElement('span');
+    n.className = 'num'; n.textContent = `﴿${v.toLocaleString('ar-EG')}﴾`;
+    box.append(n, ' ');
+    verseStart.set(v, words.length);
+    t.forEach((w, j) => words.push({ sk: skeleton(w), simple: w, verse: v, u: base + map[j], optional: false }));
+  });
+  cursor = 0;
+  paint();
+}
+
+// ---------- Following the recitation.
+let cursor = 0;            // next expected word
+const state = new Map();   // word index -> 'ok' | 'near' | 'bad'
+
+function editDistance(a, b) {
+  const d = Array.from({ length: a.length + 1 }, (_, i) => [i, ...new Array(b.length).fill(0)]);
+  for (let j = 1; j <= b.length; j++) d[0][j] = j;
+  for (let i = 1; i <= a.length; i++)
+    for (let j = 1; j <= b.length; j++)
+      d[i][j] = Math.min(d[i - 1][j] + 1, d[i][j - 1] + 1, d[i - 1][j - 1] + (a[i - 1] === b[j - 1] ? 0 : 1));
+  return d[a.length][b.length];
+}
+
+// Aligns heard words with the expected words from the cursor on: an exact
+// match scores 2, a one-letter difference in a longer word 1.
+function align(heard) {
+  const start = cursor;
+  const exp = words.slice(start, Math.min(words.length, start + heard.length * 2 + 12));
+  const h = heard.map(skeleton).filter(Boolean);
+  const score = (e, x) => (e.sk === x ? 2 : e.sk.length >= 3 && x.length >= 3 && editDistance(e.sk, x) === 1 ? 1 : 0);
+  const n = exp.length, m = h.length;
+  const dp = Array.from({ length: n + 1 }, () => new Array(m + 1).fill(0));
+  for (let i = n - 1; i >= 0; i--)
+    for (let j = m - 1; j >= 0; j--) {
+      const s = score(exp[i], h[j]);
+      dp[i][j] = Math.max(dp[i + 1][j], dp[i][j + 1], s ? dp[i + 1][j + 1] + s : 0);
+    }
+  const pairs = [];
+  for (let i = 0, j = 0; i < n && j < m;) {
+    const s = score(exp[i], h[j]);
+    if (s && dp[i][j] === dp[i + 1][j + 1] + s) { pairs.push([start + i, s, j]); i++; j++; }
+    else if (dp[i + 1][j] >= dp[i][j + 1]) i++; else j++;
+  }
+  return { pairs, h };
+}
+
+// How far a heard word is from the expected one, 0 (same) to 1 (nothing alike).
+const distanceRatio = (a, b) => editDistance(a, b) / Math.max(a.length, b.length, 1);
+
+let lastCutWasForced = false;
+
+// Returns the indexes of mistaken words in this stretch, after marking it.
+function follow(text, forced) {
+  const heard = text.split(/\s+/).filter(Boolean);
+  const { pairs, h } = align(heard);
+  const fresh = pairs.filter(([i]) => !words[i].optional);
+  if (fresh.length === 0 || (fresh.length === 1 && heard.length > 3)) {
+    lastCutWasForced = forced;
+    return { unknown: true };
+  }
+  const matched = new Map(pairs.map(([i, s]) => [i, s]));
+  const last = pairs[pairs.length - 1][0];
+  const first = fresh[0][0];
+  const mistakes = [];
+  for (let i = cursor; i <= last; i++) {
+    if (words[i].optional) continue;
+    if (matched.has(i)) { state.set(i, matched.get(i) === 2 ? 'ok' : 'near'); continue; }
+    // A word split by a forced cut is half in each stretch: let one go.
+    if (i < first && lastCutWasForced && first - cursor <= 1) { state.set(i, 'near'); continue; }
+    // What was heard in this word's place, between the matched neighbours.
+    const before = pairs.filter(([k]) => k < i).pop();
+    const after = pairs.find(([k]) => k > i);
+    const gap = h.slice(before ? before[2] + 1 : 0, after ? after[2] : h.length);
+    const closest = Math.min(1, ...gap.map((x) => distanceRatio(words[i].sk, x)));
+    // Heard as something close: probably said right but heard unclearly.
+    if (closest <= 0.5) { state.set(i, 'near'); continue; }
+    mistakes.push(i);
+  }
+  lastCutWasForced = forced;
+  if (mistakes.length) {
+    for (const i of mistakes) state.set(i, 'bad');
+    cursor = mistakes[0];
+  } else {
+    cursor = last + 1;
+  }
+  return { mistakes };
+}
+
+function paint() {
+  const worst = new Map();
+  const rank = { ok: 1, near: 2, bad: 3 };
+  words.forEach((w, i) => {
+    if (w.u < 0) return;
+    const s = state.get(i);
+    if (s && (rank[s] || 0) > (rank[worst.get(w.u)] || 0)) worst.set(w.u, s);
+  });
+  spans.forEach((el, k) => { el.className = 'w ' + (worst.get(k) || ''); });
+  const cur = words[cursor];
+  if (cur && cur.u >= 0) {
+    spans[cur.u].classList.add('cur');
+    if (listening) spans[cur.u].scrollIntoView({ block: 'center', behavior: 'smooth' });
+  }
+}
+
+// ---------- The model. It runs on the page; the microphone keeps recording
+// meanwhile, since its audio arrives from its own thread and waits in line.
+let asr = null, busy = false, nextId = 0;
+const queue = [];
+
+async function pump() {
+  if (busy || !queue.length) return;
+  const job = queue.shift();
+  busy = true;
+  const t0 = performance.now();
+  let text = '', error = '';
+  try {
+    text = (await asr(job.audio, { language: 'arabic', task: 'transcribe', max_new_tokens: 200 })).text.trim();
+  } catch (e) { error = String(e); }
+  busy = false;
+  log(`مقطع ${job.seconds.toFixed(1)}ث فُهم في ${((performance.now() - t0) / 1000).toFixed(1)}ث: ${text}${error ? ' ⚠️ ' + error : ''}`);
+  if (listening && job.epoch === epoch) handleResult(text, job.forced);
+  pump();
+}
+
+let loadStart = 0;
+function loadModel() {
+  loadStart = performance.now();
+  $('start').disabled = true;
+  $('modelPick').disabled = $('devicePick').disabled = true;
+  $('loadBar').hidden = false;
+  try { localStorage.setItem('live.model', $('modelPick').value); localStorage.setItem('live.device', $('devicePick').value); } catch {}
+  $('status').textContent = 'جاري تحميل النموذج… (مرة واحدة فقط)';
+  const name = $('modelPick').value, device = $('devicePick').value;
+  const files = {};
+  pipeline('automatic-speech-recognition', name, {
+    dtype: device === 'webgpu' && name === 'tiny' ? { encoder_model: 'fp32', decoder_model_merged: 'q8' } : 'q8',
+    device,
+    progress_callback: (p) => {
+      if (p.status !== 'progress' || !p.total) return;
+      files[p.file] = [p.loaded, p.total];
+      const [l, t] = Object.values(files).reduce(([a, b], [c, d]) => [a + c, b + d], [0, 0]);
+      $('loadBar').value = (100 * l) / t;
+    },
+  }).then((p) => {
+    asr = p;
+    $('loadInfo').textContent = `جاهز ✓ (${((performance.now() - loadStart) / 1000).toFixed(0)} ثانية · ${name === 'tiny' ? 'الصغير' : 'الكبير'} · ${device === 'webgpu' ? 'الرسوميات' : `المعالج ×${threads}`})`;
+    $('start').disabled = false;
+    $('start').textContent = 'ابدأ التسميع';
+    $('status').textContent = 'اضغط «ابدأ التسميع» واقرأ.';
+  }).catch((e) => {
+    $('loadInfo').textContent = 'تعذّر تحميل النموذج: ' + e;
+    $('start').disabled = false;
+    $('modelPick').disabled = $('devicePick').disabled = false;
+  });
+}
+
+// ---------- Listening: the microphone is cut into stretches at pauses.
+let listening = false, epoch = 0, unknownStreak = 0;
+let ctx = null, stream = null, node = null;
+let seg = [], segSpeech = 0, silence = 0, noise = 0.004, preroll = [];
+const FRAME = 480;          // 30 ms at 16 kHz
+const PAUSE_FRAMES = 22;    // ~0.66 s of quiet ends a stretch
+const MAX_FRAMES = 500;     // 15 s at most per stretch
+
+const workletCode = `
+class Tap extends AudioWorkletProcessor {
+  process(inputs) { const c = inputs[0][0]; if (c) this.port.postMessage(c.slice(0)); return true; }
+}
+registerProcessor('tap', Tap);`;
+
+let resampleCarry = new Float32Array(0), frameBuf = [];
+function onAudio(chunk, rate) {
+  // Simple resampling to 16 kHz with an averaging filter.
+  const ratio = rate / 16000;
+  const input = new Float32Array(resampleCarry.length + chunk.length);
+  input.set(resampleCarry); input.set(chunk, resampleCarry.length);
+  const outLen = Math.floor(input.length / ratio);
+  const win = Math.max(1, Math.round(ratio));
+  for (let k = 0; k < outLen; k++) {
+    const c = Math.floor(k * ratio);
+    let sum = 0, n = 0;
+    for (let j = c; j < c + win && j < input.length; j++) { sum += input[j]; n++; }
+    frameBuf.push(sum / n);
+  }
+  resampleCarry = input.slice(Math.floor(outLen * ratio));
+  while (frameBuf.length >= FRAME) onFrame(Float32Array.from(frameBuf.splice(0, FRAME)));
+}
+
+function onFrame(f) {
+  let e = 0; for (const x of f) e += x * x;
+  const rms = Math.sqrt(e / f.length);
+  const threshold = Math.max(noise * 3, 0.006);
+  const speech = rms > threshold;
+  if (!speech) noise = noise * 0.97 + rms * 0.03;
+  if (seg.length === 0 && !speech) { preroll.push(f); if (preroll.length > 7) preroll.shift(); return; }
+  if (seg.length === 0) { seg = [...preroll]; preroll = []; segSpeech = 0; silence = 0; }
+  seg.push(f);
+  if (speech) { segSpeech++; silence = 0; } else silence++;
+  if ((silence >= PAUSE_FRAMES && segSpeech >= 20) || seg.length >= MAX_FRAMES) cut(seg.length >= MAX_FRAMES);
+  else if (silence >= PAUSE_FRAMES) { seg = []; } // too short: a breath or a click
+}
+
+function cut(forced) {
+  const audio = new Float32Array(seg.length * FRAME);
+  seg.forEach((f, i) => audio.set(f, i * FRAME));
+  seg = [];
+  queue.push({ id: nextId++, audio, seconds: audio.length / 16000, forced, epoch });
+  if (queue.length > 2) $('status').textContent = '⏳ الجهاز أبطأ من القراءة، تمهّل قليلاً…';
+  pump();
+}
+
+async function startListening() {
+  stream = await navigator.mediaDevices.getUserMedia({ audio: { echoCancellation: true, noiseSuppression: true, autoGainControl: true } });
+  ctx = new AudioContext();
+  await ctx.audioWorklet.addModule(URL.createObjectURL(new Blob([workletCode], { type: 'text/javascript' })));
+  const src = ctx.createMediaStreamSource(stream);
+  node = new AudioWorkletNode(ctx, 'tap');
+  node.port.onmessage = (e) => { if (listening) onAudio(e.data, ctx.sampleRate); };
+  src.connect(node);
+  listening = true; epoch++; unknownStreak = 0;
+  seg = []; preroll = []; frameBuf = []; resampleCarry = new Float32Array(0);
+  $('start').style.display = 'none'; $('stop').style.display = 'block';
+  $('setup').style.opacity = .5; $('surah').disabled = $('from').disabled = true;
+  $('mistake').style.display = 'none';
+  $('status').innerHTML = '<span class="dot"></span>أستمع… اقرأ من الكلمة المظلّلة.';
+  paint();
+}
+
+function stopListening(message) {
+  listening = false; epoch++;
+  queue.length = 0;
+  try { node?.disconnect(); stream?.getTracks().forEach((t) => t.stop()); ctx?.close(); } catch {}
+  $('stop').style.display = 'none'; $('start').style.display = 'block';
+  $('start').textContent = 'ابدأ التسميع';
+  $('setup').style.opacity = 1; $('surah').disabled = $('from').disabled = false;
+  if (message) $('status').textContent = message;
+}
+
+function handleResult(text, forced) {
+  if (!text) return;
+  const r = follow(text, forced);
+  if (r.unknown) {
+    if (++unknownStreak >= 2) $('status').textContent = '🤔 لم أتعرّف على موضعك. تأكد أنك تقرأ من الكلمة المظلّلة.';
+    return;
+  }
+  unknownStreak = 0;
+  paint();
+  if (r.mistakes.length) return showMistake(r.mistakes);
+  if (cursor >= words.length) {
+    stopListening('🎉 أحسنت! أتممت السورة بلا أخطاء ظاهرة.');
+    return;
+  }
+  $('status').innerHTML = '<span class="dot"></span>أستمع… ✓';
+}
+
+// ---------- A mistake: stop, show the right words, play the verse.
+let mistakeVerse = 0;
+function showMistake(list) {
+  stopListening('توقّف عند خطأ.');
+  const first = words[list[0]];
+  mistakeVerse = first.verse;
+  const us = [...new Set(list.map((i) => words[i].u))].sort((a, b) => a - b);
+  $('mistakeText').textContent = list.length === 1 ? 'لم أسمع هذه الكلمة كما هي:' : `لم أسمع ${list.length} كلمات كما هي:`;
+  $('mistakeRight').textContent = us.map((k) => spans[k].textContent).join(' ');
+  $('mistake').style.display = 'block';
+  $('mistake').scrollIntoView({ behavior: 'smooth', block: 'center' });
+  playVerse(mistakeVerse);
+}
+
+let audioCache = null, player = null;
+async function playVerse(v) {
+  const surah = +$('surah').value;
+  try {
+    if (!audioCache || audioCache.surah !== surah) {
+      const r = await fetch(`${PROXY}/chapter_recitations/${RECITER}/${surah}?segments=true`, { headers: { apikey: KEY, Authorization: `Bearer ${KEY}` } });
+      const j = (await r.json()).audio_file;
+      audioCache = { surah, url: j.audio_url, timings: new Map(j.timestamps.map((t) => [+t.verse_key.split(':')[1], t])) };
+    }
+    const t = audioCache.timings.get(v);
+    player?.pause();
+    player = new Audio();
+    player.crossOrigin = 'anonymous';
+    player.src = audioCache.url;
+    player.addEventListener('loadedmetadata', () => { player.currentTime = t.timestamp_from / 1000; player.play(); }, { once: true });
+    player.addEventListener('timeupdate', () => { if (player.currentTime * 1000 >= t.timestamp_to) player.pause(); });
+    player.addEventListener('error', () => log('تعذّر تشغيل صوت القارئ'));
+  } catch (e) {
+    log('تعذّر جلب صوت القارئ: ' + e);
+  }
+}
+
+$('listen').onclick = () => playVerse(mistakeVerse);
+$('resume').onclick = () => {
+  player?.pause();
+  for (let i = cursor; i < words.length; i++) state.delete(i);
+  startListening();
+};
+$('start').onclick = () => (asr ? (player?.pause(), startListening().catch((e) => $('status').textContent = 'تعذّر تشغيل المايكروفون: ' + e)) : loadModel());
+$('stop').onclick = () => stopListening('أوقفت التسميع. اضغط «ابدأ التسميع» لتكمل من حيث توقفت.');
+
+loadText();
+log(`threads: ${threads}, webgpu: ${'gpu' in navigator}`);
+</script>
+</body>
+</html>
