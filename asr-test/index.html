@@ -1,0 +1,193 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>تجربة التسميع · نور القرآن</title>
+<style>
+  :root { --bg: #faf7f0; --fg: #1b2a27; --muted: #5b6b67; --card: #fff; --line: #e3dccb; --accent: #0e5a4e; --ok: #1e7a4f; --bad: #b42318; }
+  @media (prefers-color-scheme: dark) { :root { --bg: #0b1614; --fg: #e8efec; --muted: #a9bab5; --card: #14211e; --line: #2a3a36; --accent: #5fc2a8; --ok: #6fd3a0; --bad: #ff8a80; } }
+  @font-face { font-family: Hafs; src: url('../app/assets/assets/fonts/UthmanicHafs1Ver18.ttf'); }
+  body { margin: 0; background: var(--bg); color: var(--fg); font: 17px/1.7 -apple-system, "Segoe UI", Tahoma, sans-serif; }
+  main { max-width: 640px; margin: 0 auto; padding: 20px 16px 48px; }
+  h1 { color: var(--accent); font-size: 1.5rem; margin: 0 0 4px; }
+  .muted { color: var(--muted); font-size: .92rem; }
+  .card { background: var(--card); border: 1px solid var(--line); border-radius: 16px; padding: 14px 16px; margin: 14px 0; }
+  button { font: inherit; border: 0; border-radius: 999px; padding: 12px 20px; background: var(--accent); color: #fff; width: 100%; margin-top: 8px; }
+  button:disabled { opacity: .45; }
+  button.rec { background: var(--bad); }
+  select { font: inherit; padding: 8px; border-radius: 10px; border: 1px solid var(--line); background: var(--card); color: var(--fg); }
+  .verse { font-family: Hafs, serif; font-size: 1.7rem; line-height: 2.2; }
+  .w { padding: 0 2px; border-radius: 6px; }
+  .w.ok { color: var(--ok); }
+  .w.bad { color: var(--bad); text-decoration: underline wavy; }
+  progress { width: 100%; }
+  #log { white-space: pre-wrap; font-size: .85rem; color: var(--muted); }
+</style>
+</head>
+<body>
+<main>
+  <h1>تجربة التسميع على الجهاز</h1>
+  <p class="muted">صفحة تجربة فقط. تقيس هل يقدر جوالك يفهم التلاوة بنفسه، وكم يأخذ من الوقت. الصوت لا يخرج من جهازك أبداً.</p>
+
+  <div class="card">
+    <strong>١. تحميل النموذج</strong>
+    <p class="muted">حجمه نحو ١٠٠ ميغابايت، يُحمَّل مرة واحدة. يُفضّل الواي فاي.</p>
+    <button id="load">تحميل النموذج</button>
+    <progress id="bar" max="100" value="0" hidden></progress>
+    <div id="loadInfo" class="muted"></div>
+  </div>
+
+  <div class="card">
+    <strong>٢. اختر آية</strong>
+    <div style="display:flex; gap:8px; margin:8px 0">
+      <select id="surah" style="flex:2"></select>
+      <select id="ayah" style="flex:1"></select>
+    </div>
+    <div id="verse" class="verse"></div>
+  </div>
+
+  <div class="card">
+    <strong>٣. اقرأ الآية</strong>
+    <button id="rec" disabled>ابدأ التسجيل</button>
+    <div id="result" style="margin-top:10px"></div>
+  </div>
+
+  <div id="log"></div>
+</main>
+
+<script type="module">
+// Transformers.js and its ONNX Runtime files come from the jsDelivr CDN, pinned.
+import { pipeline, env } from 'https://cdn.jsdelivr.net/npm/@huggingface/transformers@4.3.2/dist/transformers.min.js';
+
+env.allowRemoteModels = false;
+env.allowLocalModels = true;
+env.localModelPath = './';
+
+const $ = (id) => document.getElementById(id);
+const log = (m) => { $('log').textContent += m + '\n'; };
+let asr = null;
+let quran = null;
+
+// The six first surahs, then the rest, as in the app.
+const FIRST = [1, 112, 113, 114, 108, 103];
+
+// Letters only: no diacritics, Quranic marks, alef or tatweel; hamza seats and
+// taa marbuta unified. Uthmani and plain spellings then compare equal.
+function skeleton(word) {
+  return word
+    .replace(/[ؐ-ًؚ-ٰٟۖ-ۭـ]/g, '')
+    .replace(/[اأإآٱء]/g, '')
+    .replace(/[ؤ]/g, 'و').replace(/[ئى]/g, 'ي').replace(/ة/g, 'ه');
+}
+
+function compare(expected, heard) {
+  const a = expected.map(skeleton), b = heard.map(skeleton);
+  // Longest common subsequence, to mark each expected word heard or not.
+  const dp = Array.from({ length: a.length + 1 }, () => new Array(b.length + 1).fill(0));
+  for (let i = a.length - 1; i >= 0; i--)
+    for (let j = b.length - 1; j >= 0; j--)
+      dp[i][j] = a[i] === b[j] ? dp[i + 1][j + 1] + 1 : Math.max(dp[i + 1][j], dp[i][j + 1]);
+  const ok = new Array(a.length).fill(false);
+  for (let i = 0, j = 0; i < a.length && j < b.length;) {
+    if (a[i] === b[j]) { ok[i] = true; i++; j++; } else if (dp[i + 1][j] >= dp[i][j + 1]) i++; else j++;
+  }
+  return ok;
+}
+
+async function loadQuran() {
+  quran = await (await fetch('../app/assets/assets/quran/quran.json')).json();
+  const order = [...FIRST, ...quran.map((s) => s.id).filter((id) => !FIRST.includes(id))];
+  for (const id of order) $('surah').add(new Option(`${id}. ${quran[id - 1].name}`, id));
+  $('surah').onchange = fillAyahs;
+  $('ayah').onchange = showVerse;
+  fillAyahs();
+}
+function fillAyahs() {
+  const s = quran[$('surah').value - 1];
+  $('ayah').innerHTML = '';
+  s.verses.forEach((_, i) => $('ayah').add(new Option(String(i + 1), i + 1)));
+  showVerse();
+}
+function currentVerse() { return quran[$('surah').value - 1].verses[$('ayah').value - 1]; }
+function showVerse() { $('verse').textContent = currentVerse(); $('result').innerHTML = ''; }
+
+$('load').onclick = async () => {
+  $('load').disabled = true;
+  $('bar').hidden = false;
+  const files = {};
+  const t0 = performance.now();
+  try {
+    asr = await pipeline('automatic-speech-recognition', 'model', {
+      dtype: 'q8',
+      device: 'wasm',
+      progress_callback: (p) => {
+        if (p.status === 'progress' && p.total) {
+          files[p.file] = [p.loaded, p.total];
+          const [l, t] = Object.values(files).reduce(([a, b], [c, d]) => [a + c, b + d], [0, 0]);
+          $('bar').value = (100 * l) / t;
+        }
+      },
+    });
+    $('loadInfo').textContent = `جاهز ✓ (التحميل والتجهيز: ${((performance.now() - t0) / 1000).toFixed(0)} ثانية)`;
+    $('rec').disabled = false;
+  } catch (e) {
+    $('loadInfo').textContent = 'تعذّر تحميل النموذج: ' + e;
+    $('load').disabled = false;
+  }
+};
+
+// Records from the microphone and returns 16 kHz mono samples.
+let recorder = null, chunks = [];
+$('rec').onclick = async () => {
+  if (recorder) { recorder.stop(); return; }
+  const stream = await navigator.mediaDevices.getUserMedia({ audio: true });
+  recorder = new MediaRecorder(stream);
+  chunks = [];
+  recorder.ondataavailable = (e) => chunks.push(e.data);
+  recorder.onstop = async () => {
+    stream.getTracks().forEach((t) => t.stop());
+    recorder = null;
+    $('rec').textContent = 'ابدأ التسجيل';
+    $('rec').classList.remove('rec');
+    $('rec').disabled = true;
+    $('result').textContent = 'جاري الفهم…';
+    try {
+      const blob = new Blob(chunks, { type: chunks[0]?.type });
+      const decoded = await new AudioContext().decodeAudioData(await blob.arrayBuffer());
+      const off = new OfflineAudioContext(1, Math.ceil(decoded.duration * 16000), 16000);
+      const src = off.createBufferSource();
+      src.buffer = decoded; src.connect(off.destination); src.start();
+      const audio = (await off.startRendering()).getChannelData(0);
+      await check(audio, decoded.duration);
+    } catch (e) {
+      $('result').textContent = 'حدث خطأ: ' + e;
+    }
+    $('rec').disabled = false;
+  };
+  recorder.start();
+  $('rec').textContent = 'إيقاف التسجيل';
+  $('rec').classList.add('rec');
+};
+
+async function check(audio, seconds) {
+  const t0 = performance.now();
+  const out = await asr(audio, { language: 'arabic', task: 'transcribe', max_new_tokens: 200 });
+  const took = (performance.now() - t0) / 1000;
+  const expected = currentVerse().split(' ');
+  const ok = compare(expected, out.text.trim().split(/\s+/));
+  const words = expected.map((w, i) => `<span class="w ${ok[i] ? 'ok' : 'bad'}">${w}</span>`).join(' ');
+  const wrong = ok.filter((x) => !x).length;
+  $('result').innerHTML = `
+    <div class="verse">${words}</div>
+    <p>${wrong === 0 ? '✅ ممتاز، لم يجد خطأً' : `⚠️ كلمات لم يسمعها كما هي: ${wrong}`}</p>
+    <p class="muted">سمع: ${out.text}</p>
+    <p class="muted"><strong>السرعة:</strong> تلاوة ${seconds.toFixed(1)} ثانية فُهمت في ${took.toFixed(1)} ثانية</p>`;
+  log(`${$('surah').value}:${$('ayah').value} audio ${seconds.toFixed(1)}s, took ${took.toFixed(1)}s`);
+}
+
+loadQuran();
+log(navigator.userAgent);
+</script>
+</body>
+</html>
