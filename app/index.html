@@ -33,9 +33,19 @@
 
   <title>نور القرآن · Noor Al-Quran</title>
   <link rel="manifest" href="manifest.json">
+  <link rel="preload" href="main.dart.js" as="script">
 </head>
-<body style="margin:0;background:#FAF7F0">
-  <div id="loading" style="position:fixed;inset:0;display:flex;align-items:center;justify-content:center;font:16px -apple-system,sans-serif;color:#0E5A4E">جاري التحميل… Loading…</div>
+<body style="margin:0;background:#07352E">
+  <!-- Shown at once while the app downloads, in the app's colours. -->
+  <style>
+    #loading{position:fixed;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:18px;
+      background:linear-gradient(#24423B,#07352E);font:600 22px -apple-system,"Segoe UI",Tahoma,sans-serif;color:#E9D3A0}
+    #loading img{width:96px;height:96px;border-radius:22px;box-shadow:0 8px 24px rgba(0,0,0,.35)}
+    #loading i{width:34px;height:34px;border-radius:50%;border:3px solid rgba(233,211,160,.25);border-top-color:#C9A04E;
+      animation:spin 0.9s linear infinite}
+    @keyframes spin{to{transform:rotate(360deg)}}
+  </style>
+  <div id="loading"><img src="icons/Icon-192.png" alt=""><div>نور القرآن</div><i></i></div>
   <!--
     You can customize the "flutter_bootstrap.js" script.
     This is useful to provide a custom configuration to the Flutter loader
