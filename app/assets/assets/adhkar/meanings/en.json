@@ -1,0 +1,177 @@
+{
+ "source": "HadeethEnc.com",
+ "adhkar": {
+  "morning": {
+   "2": "6082",
+   "3": "6082",
+   "4": "6082",
+   "5": "3008",
+   "6": "5490",
+   "7": "5503",
+   "12": "5485",
+   "13": "3006",
+   "14": "6093",
+   "15": "4193",
+   "20": "5517",
+   "22": "5508",
+   "23": "65905",
+   "25": "5516"
+  },
+  "evening": {
+   "2": "6274",
+   "3": "6082",
+   "4": "6082",
+   "5": "6082",
+   "6": "3008",
+   "7": "5490",
+   "8": "5503",
+   "13": "5485",
+   "14": "3006",
+   "15": "6093",
+   "16": "4193",
+   "20": "5517",
+   "23": "5516"
+  },
+  "afterPrayer": {
+   "0": "10947",
+   "1": "65102",
+   "2": "6203",
+   "3": "10948",
+   "5": "10950"
+  },
+  "sleep": {
+   "0": "65060",
+   "2": "6274",
+   "3": "6034",
+   "5": "6167",
+   "7": "6076",
+   "8": "6335",
+   "9": "5882",
+   "10": "3006"
+  },
+  "waking": {},
+  "fasting": {}
+ },
+ "hadiths": {
+  "3006": {
+   "text": "Abu Hurayrah (may Allah be pleased with him) reported that Abu Bakr (may Allah be pleased with him) said: \"O Messenger of Allah, teach me some words to recite in the morning and in the evening.\" He said: \"Say: 'O Allah, Creator of the heavens and the earth, Knower of the hidden and the apparent, Lord of everything and its Possessor. I bear witness that there is no god but You. I seek refuge in You from the evil of my own self and from the evil of the devil and the evil of polytheism to which he calls, and from incurring any sin upon myself or upon any other Muslim.'\" He added: \"Recite them in the morning, in the evening, and when you go to bed.\"",
+   "attribution": "Narrated by At-Termedhy - An-Nasaa’i - Narrated by Abu Daoud - Narrated by Ahmad",
+   "grade": "Authentic hadith"
+  },
+  "3008": {
+   "text": "‘Abdullāh ibn Mas‘ūd (may Allah be pleased with him) reported: In the evening, the Prophet (may Allah's peace and blessings be upon him) used to say: \"The evening has reached, and all the dominion belongs to Allah and praise be to Allah. There is no god but Allah, alone without any partner.\" The narrator said: \"I believe he said along with them: 'To Him belongs the dominion, and to Him belongs praise, and He is Omnipotent over all things. My Lord, I ask You for the good of this night and the good of what follows it, and I seek refuge with You from the evil of this night and the evil of what follows it. My Lord, I seek refuge with You from laziness and woeful aging. My Lord, I seek refuge with You from torment of the fire and torment in the grave.' In the morning, he used to say: 'The morning has reached and all the dominion belongs to Allah.'\"",
+   "attribution": "Narrated by Muslim",
+   "grade": "Authentic hadith"
+  },
+  "4193": {
+   "text": "Abu Sa‘īd al-Khudri (may Allah be pleased with him) reported that the Messenger of Allah (may Allah's peace and blessings be upon him) said: \"O Abu Sa‘īd, whoever is pleased with Allah as a Lord, with Islam as a religion, and with Muhammad as a messenger, Paradise is guaranteed for him.\" Abu Sa‘īd was full of wonder at that, so he said: O Messenger of Allah, repeat that to me. He did so and then said: \"There is something else by means of which the slave is raised a hundred degrees in Paradise; the distance between each two degrees is like that between the heavens and the earth.\" He said: O Messenger of Allah, what is it? He said: \"Jihad for the sake of Allah, Jihad for the sake of Allah.\"",
+   "attribution": "Narrated by Muslim",
+   "grade": "Authentic"
+  },
+  "5485": {
+   "text": "Ibn ‘Umar (may Allah be pleased with him and his father) reported: The Messenger of Allah (may Allah's peace and blessings be upon him) never abandoned these supplications in the evening and the morning: \"O Allah, I ask You for well-being in this world and the Hereafter. O Allah, I ask You for pardon and well-being in my religion, my worldly life, my family, and my wealth. O Allah, conceal my imperfection—or  my imperfections—and secure my fears. O Allah, protect me from before me, from behind me, from my right, from my left, and from above me, and I seek refuge with Your greatness from being suddenly killed from beneath me.\"",
+   "attribution": "Narrated by Abu Dāwūd, An-Nasā’i, Ibn Mājah, and Ahmad",
+   "grade": "Authentic"
+  },
+  "5490": {
+   "text": "Abu Hurayrah (may Allah be pleased with him) reported that the Prophet (may Allah's peace and blessings be upon him): Upon reaching the morning, he used to say: \"O Allah, by You we have reached the morning, and by You we have reached the evening; by You we live, and by You we die, and to You is the Resurrection.\" Upon reaching the evening, he would say: \"By You we have reached the evening, and by You we have reached the morning, by You we live, and by You we die, and to You is the resurrection.\" He said: And another time: \"And to You is the final destination.\".",
+   "attribution": "Narrated by Abu Dāwūd, At-Tirmidhi, and An-Nasā’i in Al-Kubra and by Ibn Mājah",
+   "grade": "Hasan"
+  },
+  "5503": {
+   "text": "Shaddād ibn Aws (may Allah be pleased with him) reported from the Prophet (may Allah's peace and blessings be upon him): \"The best way of seeking Allah's forgiveness is to say: 'Allāhumma anta rabbi la ilāha illa ant khalaqtani wa ana ‘abduk wa ana ‘ala ‘ahdika wa wa‘dika mastata‘t a‘ūdhu bika min sharri ma sana‘t abū’u laka bini‘matika ‘alayya wa abū’u bidhanbi faghfir li fa innahu la yaghfiru adh-dhunūba illa ant (O Allah, You are my Lord. You created me, and I am Your slave. I will remain faithful to Your covenant and promise as much as possible. I seek refuge with You from the evil of what I have done. I acknowledge Your favor upon me, and I admit my sin. So, forgive me. Indeed, none can forgive sins but You).'\" He (may Allah's peace and blessings be upon him) added: \"And whoever says this during the day while being certain of its meaning, then he dies before the evening, he will be from the people of Paradise, and whoever says it at night while being certain of its meaning then he dies before the morning, he will be from the people of Paradise.\"",
+   "attribution": "Narrated by Al-Bukhāri",
+   "grade": "Authentic"
+  },
+  "5508": {
+   "text": "Juwayriyah, Mother of the Believers, (may Allah be pleased with her) reported: The Prophet (may Allah's peace and blessings be upon him) went out from her house in the early morning when he prayed the Morning prayer, while she was in her prayer place. Then he returned after offering the Forenoon prayer while she was still sitting. He said: \"Are you still in the state I left you in?\" She said: Yes. The Prophet (may Allah's peace and blessings be upon him) said: \"I said four words three times after I had left you; if they were to be weighed against what you have been saying since morning, they would outweigh them: Subhānallāh wa bihamdih, ‘adada khalqih, wa rida nafsih, a zinata ‘arshih, wa midāda kalimātih (Glory be to Allah and all praise is due to Him by the number of His creation, by His own pleasure, by the weight of His Throne, and by the ink of His words.).\"",
+   "attribution": "Narrated by Muslim",
+   "grade": "Authentic"
+  },
+  "5516": {
+   "text": "Abu Hurayrah (may Allah be pleased with him) reported: The Messenger of Allah (may Allah’s peace and blessings be upon him) said: \"Whoever says ‘subhān Allah wa bihamdih (glory be to Allah, and praise be to Him)’ one hundred times a day, his sins will be erased, even if they were as much as the foam of the sea.\"",
+   "attribution": "Agreed upon",
+   "grade": "Authentic"
+  },
+  "5517": {
+   "text": "Abu Ayyūb (may Allah be pleased with him) reported: The Prophet (may Allah's peace and blessings be upon him) said: \"Whoever says ten times ‘Lā ilāha illa Allah wahdahu lā sharīka lahu, lahu al-mulku wa lahu al-hamdu, wa huwa ‘ala kulli shay’in qadīr (There is no god but Allah, alone, with no partner; to Him belongs the dominion, and praise is due to Him, and He has power over all things)' will be the same (in reward) as the one who emancipated four slaves from the children of Ishmael.\"",
+   "attribution": "Agreed upon",
+   "grade": "Authentic"
+  },
+  "5882": {
+   "text": "Anas ibn Mālik (may Allah be pleased with him) reported that the Prophet (may Allah's peace and blessings be upon him) said: ''Praise be to Allah Who gave us food and drink, provided for us sufficiently, and gave us shelter, for how many there are who have no one to provide for them or to give them shelter.''",
+   "attribution": "Narrated by Muslim",
+   "grade": "Authentic hadith"
+  },
+  "6034": {
+   "text": "Abu Hurayrah (may Allah be pleased with him) reported that the Prophet (may Allah's peace and blessings be upon him) said: \"When any one of you goes to his bed, let him dust off his bed with the end of his lower garment, for indeed he does not know what came unto it after he had left it. Then one should say: 'In Your Name, O my Lord, I place my side (on the bed), and by You I will lift it. If You take my soul, then have mercy on it, and if You send it, then protect it as You protect Your righteous slaves.'\"",
+   "attribution": "Narrated by Bukhari & Muslim",
+   "grade": "Authentic hadith"
+  },
+  "6076": {
+   "text": "‘Ali (may Allah be pleased with him) reported: Fātimah (may Allah be pleased with her) went to the Prophet (may Allah's peace and blessings be upon him) to complain about the effect of the grinding-stone on her hand, as she heard that he had acquired some slaves. She did not find him. So, she mentioned the matter to ‘Ā’ishah. When he came, ‘Ā’ishah informed him. He related: So, he visited us when we had gone to bed, and as we were about to get up, he said: \"Stay where you are.\" He came and sat down between her and me, and I felt the coldness of his feet on my belly. He said: \"Let me guide you to something better than what you asked for. When you go to bed, say ‘Subhān Allah' (glory be to Allah) thirty-three times, ‘Alhamdulillāh' (praise be to Allah) thirty-three times, and ‘Allāhu Akbar' (Allah is the Most Great) thirty-four times. This is better for you than a servant.\"",
+   "attribution": "Agreed upon",
+   "grade": "Authentic"
+  },
+  "6082": {
+   "text": "‘Abdullah ibn Khubayb (may Allah be pleased with him) reported: We went out on a rainy and extremely dark night looking for the Messenger of Allah (may Allah's peace and blessings be upon him) to lead us in prayer. He said: I caught up with him, and he said: \"Say,\" but I did not say anything. Then, he said: \"Say,\" and again, I said nothing. He said: \"Say.\" I replied: What should I say? He said:  \"{Say: \"He is Allah, the One\"} and Al-Mu'awwidhatān (Surat al-Falaq and Surat an-Nās) thrice in the evening and the morning, they will grant you protection from everything.\"",
+   "attribution": "Narrated by Abu Dāwūd, At-Tirmidhi, and An-Nasā’i",
+   "grade": "Authentic"
+  },
+  "6093": {
+   "text": "Abān ibn ‘Uthmān reported: I heard ‘Uthmān ibn ‘Affān (may Allah be pleased with him) say: I heard the Messenger of Allah (may Allah's peace and blessings be upon him) say: \"Whoever says three times: 'In the name of Allah, with Whose name nothing in the earth or the heaven can cause harm, and He is the All-Hearing, the All-Knowing' will not suffer sudden affliction until the morning; and whoever says it in the morning three times will not suffer sudden affliction until the evening.\" He said: Abān ibn ‘Uthmān was struck with paralysis, and the man who heard the Hadīth from him started looking at him, so, he said to him: Why are you looking at me? By Allah, I did not tell a lie about 'Uthmān, nor did ‘Uthmān tell a lie about the Prophet (may Allah's peace and blessings be upon him), but the day I was afflicted with this, I got angry and forgot to say it.",
+   "attribution": "Narrated by Abu Dāwūd, At-Tirmidhi, and An-Nasā’i in Al-Kubra and by Ibn Mājah and Ahmad",
+   "grade": "Authentic"
+  },
+  "6167": {
+   "text": "Hudhayfah ibn al-Yamān (may Allah be pleased with him) reported: When the Prophet (may Allah's peace and blessings be upon him) intended to sleep, he would place his hand under his head, then say: \"Allāhumma qini ‘adhābaka yawma tajma‘u or tab‘athu ‘ibādak (O Allah, protect me from Your punishment on the Day You gather or resurrect Your servants).\"",
+   "attribution": "Narrated by At-Tirmidhi",
+   "grade": "Authentic"
+  },
+  "6203": {
+   "text": "Abu az-Zubayr reported: Ibn az-Zubayr (may Allah be pleased with him) used to say after every prayer after making taslīm: “Lā ilāha illa Allah wahdahu lā sharīka lahu, lahu al-mulk wa lahu al-hamd wa huwa ‘ala kolli shay‘in qadīr; lā hawla wa lā quwwata illa billāh, lā ilāha illa Allah, wa lā na‘budu illa iyyāh, lahu an-ni‘mah wa al-fadl, wa lahu ath-thanā’ al-hasan; lā ilāha illa Allah, mukhlisīn lahu ad-dīn wa law kariha al-kāfirūn (There is no god but Allah, alone, with no partner. To Him belongs the dominion, and praise is due to Him, and He has power over all things. There is no power or strength except through Allah. There is no god but Allah, and we worship none but Him. To Him belongs the blessing, to Him belongs the grace, and to Him belongs all excellent praise. There is no god but Allah; we are sincerely devoted to Him, even if the disbelievers may dislike it).\" And he said: \"The Messenger of Allah (may Allah's peace and blessings be upon him) used to celebrate Allah’s oneness with these words after every prayer.\"",
+   "attribution": "Narrated by Muslim",
+   "grade": "Authentic"
+  },
+  "6274": {
+   "text": "Abu Mas‘ūd (may Allah be pleased with him) reported: The Prophet (may Allah’s peace and blessings be upon him) said: \"Whoever recites the last two verses of Sūrat al-Baqarah at a night, they will suffice him.\"",
+   "attribution": "Agreed upon",
+   "grade": "Authentic"
+  },
+  "6335": {
+   "text": "Suhayl reported: Abu Sālih used to order us that if anyone of us wanted to sleep, he should lie on his right side, and then say: \"O Allah, Lord of the heavens and Lord of the earth and Lord of the Magnificent Throne! Our Lord, and the Lord of everything, the Cleaver of grains and date seeds, the Revealer of the Torah, the Gospel, and the Criterion (the Qur'an), I seek refuge with You from the evil of everything that You have grasp of its forelock (You have full control over it). O Allah, You are the First, there is nothing before You, You are the Last and there is nothing after You, You are the Highest and there is nothing above You, and You are the Nearest and there is nothing nearer than You. Remove the burden of debt from us and relieve us of poverty.\" Abu Sālih used to narrate this from Abu Hurayrah, who narrated it from the Prophet (may Allah's peace and blessings be upon him).",
+   "attribution": "Narrated by Muslim",
+   "grade": "Authentic hadith"
+  },
+  "10947": {
+   "text": "Thawbān (may Allah be pleased with him) reported: When the Messenger of Allah (may Allah's peace and blessings be upon him) finished his prayer, he would seek Allah’s forgiveness three times and say: \"Allahumma anta as-salām wa minka as-salām, tabārakta yadha al-jalāl wa al-ikrām (O Allah, You are As-Salām (peace, perfection), and as-salām comes from You. Blessed are You, O Possessor of Glory and Honor)\". Al-Walīd said: I said to Al-Awzā‘i: \"How is the seeking of forgiveness?\" He said: \"You say: Astaghfirullāh, astaghfirullāh (I seek forgiveness from Allah, I seek forgiveness from Allah).\"",
+   "attribution": "Narrated by Muslim",
+   "grade": "Authentic"
+  },
+  "10948": {
+   "text": "Abu Hurayrah (may Allah be pleased with him) reported that the Messenger of Allah (may Allah's peace and blessings be upon him) said: \"Whoever glorifies Allah directly after each prayer thirty-three times, praises Allah thirty-three times, and proclaims the greatness of Allah thirty-three times, these are ninety-nine, and completes one hundred by saying: La ilāha illallāh wahdahu la sharīka lah, lahu al-mulku wa lahu al-hamdu wa huwa ‘ala kulli shay’in qadīr (There is no god except Allah. He is One and has no partner with Him. To Him belongs sovereignty and to Him belongs praise, and He is Omnipotent over everything), his sins will be forgiven even if they are like the sea foam.\"",
+   "attribution": "Narrated by Muslim",
+   "grade": "Authentic"
+  },
+  "10950": {
+   "text": "Abu ’Umāmah (may Allah be pleased with him) reported: The Messenger of Allah (may Allah's peace and blessings be upon him) said: \"Whoever recites the Verse of the Kursi right after each obligatory prayer will have nothing preventing him from entering Paradise except that he dies.\"",
+   "attribution": "Narrated by An-Nasā’i in Al-Kubra",
+   "grade": "Authentic"
+  },
+  "65060": {
+   "text": "‘Ā’ishah (may Allah be pleased with her) reported: When the Prophet (may Allah’s peace and blessings be upon him) went to bed every night, he would join his palms together and blow into them and recite the Surahs al-Ikhlās, al-Falaq, and an-Nās, and then he would wipe with his hands over as many parts of his body as he could, starting with his head, face, and the front of his body. He used to do that three times.",
+   "attribution": "Narrated by Al-Bukhāri",
+   "grade": "Authentic"
+  },
+  "65102": {
+   "text": "Warrād, the scribe of Al-Mughīrah ibn Shu‘bah, related: Al-Mughīrah ibn Shu‘bah dictated to me in a letter to Mu‘āwiyah: The Prophet (may Allah’s peace and blessings be upon him) used to say after every obligatory prayer: \"Lā ilāh illa Allah, wahdahu lā sharīka lah, lahu al-mulku wa lahu al-hamdu wa huwa ‘ala koll shay’in qadīr, allahumma lā māni‘a lima a‘tayt wa lā mu‘tiya lima mana‘ta wa la banfa‘u dha al-jaddi minka al-jadd\" (There is no god but Allah, alone, with no partner with Him. To Him belongs the dominion and to Him praise is due, and He is Able to do all things. O Allah, none can withhold what You give and none can give what You withhold, and riches cannot avail a wealthy person against You).",
+   "attribution": "Agreed upon",
+   "grade": "Authentic"
+  },
+  "65905": {
+   "text": "Abu Hurayrah (may Allah be pleased with him) reported that the Messenger of Allah (may Allah's peace and blessings be upon him) said: \"Whoever says a hundred times in a day: \"La ilāha illallāhu wahdahu la sharīka lah, lahu al-mulku wa lahu al-hamdu wa huwa ‘ala kulli shay’in qadīr\" (There is no god but Allah. He is One, and He has no partner with Him; to Him belong the sovereignty and praise, and He is competent over all things); he will have a reward equivalent to that of emancipating ten slaves; a hundred good deeds will be added to his record; a hundred of his sins will be erased; and he will be shielded against the devil on that day till the evening; and no one will exceed him in doing good deeds except someone who says more than that.\"",
+   "attribution": "Agreed upon",
+   "grade": "Authentic"
+  }
+ }
+}

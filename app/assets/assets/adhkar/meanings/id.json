@@ -1,0 +1,177 @@
+{
+ "source": "HadeethEnc.com",
+ "adhkar": {
+  "morning": {
+   "2": "6082",
+   "3": "6082",
+   "4": "6082",
+   "5": "3008",
+   "6": "5490",
+   "7": "5503",
+   "12": "5485",
+   "13": "3006",
+   "14": "6093",
+   "15": "4193",
+   "20": "5517",
+   "22": "5508",
+   "23": "65905",
+   "25": "5516"
+  },
+  "evening": {
+   "2": "6274",
+   "3": "6082",
+   "4": "6082",
+   "5": "6082",
+   "6": "3008",
+   "7": "5490",
+   "8": "5503",
+   "13": "5485",
+   "14": "3006",
+   "15": "6093",
+   "16": "4193",
+   "20": "5517",
+   "23": "5516"
+  },
+  "afterPrayer": {
+   "0": "10947",
+   "1": "65102",
+   "2": "6203",
+   "3": "10948",
+   "5": "10950"
+  },
+  "sleep": {
+   "0": "65060",
+   "2": "6274",
+   "3": "6034",
+   "5": "6167",
+   "7": "6076",
+   "8": "6335",
+   "9": "5882",
+   "10": "3006"
+  },
+  "waking": {},
+  "fasting": {}
+ },
+ "hadiths": {
+  "3006": {
+   "text": "Dari Abu Hurairah -raḍiyallāhu 'anhu- bahwasannya Abu Bakar -raḍiyallāhu 'anhu- berkata, \"Wahai Rasulullah ajarkanlah kepadaku doa yang aku ucapkan waktu pagi dan petang.\" Maka Rasulullah bersabda, \"Ucapkanlah, ya Allah Pencipta langit dan bumi, Yang Maha Mengetahui alam gaib dan yang tampak, Rabb segala sesuatu dan pemiliknya. Aku bersaksi bahwa tiada Ilah yang berhak disembah selain Engkau. Aku berlindung kepada-Mu dari kejelekan jiwaku dan kejelekan setan dan sekutunya, dan (aku berlindung supaya tidak) mendatangkan keburukan kepada diriku sendiri atau menganiaya orang muslim lainnya.\" Beliau bersabda, \"Bacalah kalimat-kalimat itu apabila kamu berada di pagi hari dan di sore hari, serta apabila kamu hendak tidur.\"",
+   "attribution": "Diriwayatkan oleh Tirmiżi - Diriwayatkan oleh Nasā`i - Diriwayatkan oleh Abu Daud - Diriwayatkan oleh Ahmad",
+   "grade": "Hadis sahih"
+  },
+  "3008": {
+   "text": "Dari Abdullah bin Mas'ud -raḍiyallāhu 'anhu- ia berkata, Apabila Nabi -ṣallallāhu 'alaihi wa sallam- memasuki waktu sore hari, beliau mengucapkan, \"Kami memasuki waktu sore hari dan segala kekuasaan hanya milik Allah, segala puji hanya milik Allah. Tidak ada Ilah yang berhak disembah selain Allah Yang Maha Esa tidak ada sekutu bagi-Nya.\" Perawi berkata, \"Aku lihat beliau membaca (dalam doa itu), \"Bagi-Nya-lah segala kekuasaan dan bagi-Nya-lah segala puji dan Dia-lah Yang Maha Kuasa atas segala sesuatu. Ya Rabbku, aku memohon kepada-Mu kebaikan yang ada di malam ini dan kebaikan yang terdapat setelahnya. Aku berlindung kepada-Mu dari kejelekan yang ada di malam ini dan kejelekan yang terdapat setelahnya. Wahai Rabbku, aku berlindung kepadamu dari kemalasan dan kejelekan umur tua. Wahai Rabbku, aku berlindung kepada-Mu dari siksa neraka dan azab kubur.\" Apabila beliau berada di pagi hari, beliau mengucapkan doa itu juga, \"Kami memasuki waktu pagi dan segala kekuasaan hanya milik Allah.\"",
+   "attribution": "Diriwayatkan oleh Muslim",
+   "grade": "Hadis sahih"
+  },
+  "4193": {
+   "text": "Abu Sa‘īd al-Khudriy -raḍiyallāhu 'anhu- meriwayatkan, bahwa Rasulullah ﷺ bersabda, \"Wahai Abu Sa'īd! Siapa yang rida Allah sebagai Tuhannya, Islam sebagai agamanya, dan Muhammad sebagai rasulnya, maka ditetapkan baginya surga.\" Abu Sa'īd merasa takjub dengan hal itu, ia berkata, \"Ulangi hal itu untukku, wahai Rasulullah!\" Beliau pun mengulanginya lalu bersabda, \"Ada amalan yang lain, Allah mengangkat hamba dengannya seratus derajat di surga. Jarak antara dua derajat seperti jarak antara langit dan bumi.\" Abu Sa'īd bertanya, \"Apakah itu, wahai Rasulullah?\" Beliau bersabda, \"Jihad di jalan Allah. Jihad di jalan Allah.\"",
+   "attribution": "HR. Muslim",
+   "grade": "Sahih"
+  },
+  "5485": {
+   "text": "Ibnu Umar -raḍiyallāhu 'anhumā- meriwayatkan, Rasulullah ﷺ tidak pernah meninggalkan doa-doa ini saat memasuki waktu sore dan pagi: \"Ya Allah! Aku memohon kepada-Mu keselamatan di dunia dan akhirat. Ya Allah! Aku memohon kepada-Mu ampunan dan keselamatan dalam agamaku, duniaku, keluargaku, dan hartaku. Ya Allah! Tutuplah auratku, berilah rasa aman terhadap ketakutanku. Ya Allah! Jagalah aku dari depanku, dari belakangku, dari kananku, dari kiriku, dan dari atasku. Aku juga berlindung dengan keagungan-Mu dari dibinasakan secara tiba-tiba dari bawahku.\"",
+   "attribution": "HR. Abu Daud, Nasai, Ibnu Majah, dan Ahmad",
+   "grade": "Sahih"
+  },
+  "5490": {
+   "text": "Abu Hurairah -raḍiyallāhu 'anhu- meriwayatkan dari Nabi ﷺ: Beliau biasa ketika memasuki waktu pagi membaca, \"Allāhumma bika aṣbaḥnā, wa bika amsainā, wa bika naḥyā, wa bika namūtu, wa ilaikan-nusyūr.\" (Ya Allah! Dengan pertolongan dan rahmat-Mu kami memasuki pagi hari, dengan pertolongan dan rahmat-Mu kami memasuki sore hari, dengan pertolongan dan rahmat-Mu kami hidup, dengan pertolongan dan rahmat-Mu kami mati, dan hanya kepada-Mu kebangkitan semua makhluk). Sementara ketika memasuki waktu sore beliau membaca, \"... bika amsainā, wa bika aṣbaḥnā, wa bika naḥyā, wa bika namūtu, wa ilaikan-nusyūr (dengan pertolongan dan rahmat-Mu kami memasuki sore hari, dengan pertolongan dan rahmat-Mu kami memasuki pagi hari, dengan pertolongan dan rahmat-Mu kami hidup, dengan pertolongan dan rahmat-Mu kami mati, dan hanya kepada-Mu kebangkitan semua makhluk).\" Perawi menambahkan: Di waktu yang lain, beliau membaca, \"Wa ilaikal-maṣīr (dan hanya kepada-Mu semua makhluk kembali).\"",
+   "attribution": "HR. Abu Daud, Tirmizi, Nasai dalam Al-Kubrā, dan Ibnu Majah",
+   "grade": "Hasan"
+  },
+  "5503": {
+   "text": "Syaddād bin Aus -raḍiyallāhu 'anhu- meriwayatkan dari Nabi ﷺ bahwa beliau bersabda, \"Sayyidul-istigfār (istigfar yang paling agung) adalah engkau mengucapkan, 'Allāhumma anta rabbī lā ilāha illā anta, khalaqtanī wa anā 'abduka, wa anā 'alā 'ahdika wa wa'dika mastaṭa'tu. A'ūżu bika min syarri mā ṣana'tu. Abū`u laka bi ni'matika 'alayya, wa abū`u laka bi żanbī, fagfir lī fa innahū lā yagfiruż-żunūba illā anta. (Ya Allah! Engkau adalah Tuhanku, tidak ada Tuhan yang berhak disembah kecuali Engkau. Engkau yang menciptakanku, aku adalah hamba-Mu. Aku menetapi perjanjian dan janjiku kepada-Mu semampuku. Aku berlindung kepada-Mu dari keburukan perbuatanku. Aku mengakui nikmat-Mu atas diriku dan aku mengakui dosaku. Maka ampunilah aku, karena sesungguhnya tiada yang mengampuni dosa selain Engkau).' Siapa yang mengucapkan ini di siang hari dengan penuh keyakinan, lalu ia meninggal pada hari itu sebelum memasuki sore, maka ia termasuk penghuni surga. Dan siapa yang mengucapkannya di waktu malam dengan penuh keyakinan, lalu ia meninggal sebelum masuk waktu pagi, maka ia termasuk penghuni surga.\"",
+   "attribution": "HR. Bukhari",
+   "grade": "Sahih"
+  },
+  "5508": {
+   "text": "Ummul Mukminin Juwairiyah -raḍiyallāhu 'anhā- meriwayatkan, Nabi ﷺ keluar meninggalkannya pagi hari ketika salat Subuh, sementara dia sedang di tempat salatnya. Beliau kemudian kembali setelah waktu duha sementara dia masih duduk, maka beliau bertanya, \"Kamu masih dalam keadaan ketika aku meninggalkanmu?\" Dia menjawab, \"Ya.\" Nabi ﷺ bersabda, \"Sungguh, setelah meninggalkanmu aku telah membaca empat kalimat sebanyak tiga kali; sekiranya ditimbang dengan semua yang kamu baca sejak pagi ini niscaya akan mengalahkannya, yaitu: Subḥānallāhi wa biḥamdihi 'adada khalqihi wa riḍā nafsihi wa zinata 'arsyihi wa midāda kalimātihi (Mahasuci Allah, dan aku memuji-Nya sejumlah bilangan makhluk-Nya, sejauh rida jiwa-Nya, seberat Arasy-Nya, dan sebanyak tinta tulisan kalimat-Nya).\"",
+   "attribution": "HR. Muslim",
+   "grade": "Sahih"
+  },
+  "5516": {
+   "text": "Abu Hurairah -raḍiyallāhu 'anhu- meriwayatkan bahwa Rasulullah ﷺ bersabda, \"Siapa yang mengucapkan 'Subḥānallāh wa biḥamdihi' seratus kali sehari, maka dosa-dosanya dihapuskan walaupun sebanyak buih di lautan.\"",
+   "attribution": "Muttafaq 'alaih",
+   "grade": "Sahih"
+  },
+  "5517": {
+   "text": "Abu Ayyūb -raḍiyallāhu 'anhu- meriwayatkan dari Nabi ﷺ bahwa beliau bersabda, \"Siapa yang mengucapkan 'Lā ilāha illallāh waḥdahu lā syarīka lah, lahul-mulku wa lahul-ḥamdu, wa huwa 'alā kulli syai`in qadīr' (Tidak ada tuhan yang berhak disembah kecuali Allah Yang Maha Esa, tidak ada sekutu bagi-Nya, milik-Nya seluruh kerajaan dan bagi-Nya segala pujian, dan Dialah Yang Mahakuasa atas segala sesuatu) sebanyak sepuluh kali maka dia seperti orang yang telah memerdekakan empat orang dari anak keturunan Ismail.\"",
+   "attribution": "Muttafaq 'alaih",
+   "grade": "Sahih"
+  },
+  "5882": {
+   "text": "Dari Anas bin Malik -raḍiyallāhu 'anhu-, bahwasanya Rasulullah -ṣallallāhu 'alaihi wa sallam- jika menghampiri tempat tidurnya berdoa (dengan mengucapkan), \"Segala puji bagi Allah yang telah memberi kami makan, minum, kecukupan dan perlindungan. Betapa banyak orang yang tidak memiliki kecukupan dan perlindungan.\"",
+   "attribution": "Diriwayatkan oleh Muslim",
+   "grade": "Hadis sahih"
+  },
+  "6034": {
+   "text": "Dari Abu Hurairah -raḍiyallāhu 'anhum- secara marfū', \"Apabila salah seorang di antara kalian menghampiri kasurnya (untuk tidur -korektor), hendaknya ia mengibaskan kasurnya dengan ujung sarungnya, karena ia tidak tahu apa yang akan terjadi padanya, lalu mengucapkan, \"Dengan nama-Mu, wahai Tuhanku, aku rebahkan tubuhku dan dengan nama-Mu aku mengangkatnya. Jika Engkau renggut nyawaku, maka kasihanilah ia. Jika Engkau melepaskannya, maka jagalah ia sebagaimana Engkau menjaga hamba-hamba-Mu yang saleh.\"",
+   "attribution": "Muttafaq 'alaih",
+   "grade": "Hadis sahih"
+  },
+  "6076": {
+   "text": "Ali -raḍiyallāhu 'anhu- meriwayatkan, Fatimah -raḍiyallāhu 'anhā- datang menemui Nabi ﷺ untuk mengeluhkan bekas batu penggilingan di tangannya karena ia mendapat berita ada budak yang sampai kepada beliau. Akan tetapi, ia tidak menemukan beliau sehingga ia menyebutkan hal itu kepada Aisyah. Ali melanjutkan: Beliau kemudian datang menemui kami sementara kami telah bersiap-siap di tempat tidur, sehingga kami segera bangun, tetapi beliau bersabda, \"Tetaplah kalian di tempat kalian.\" Lantas beliau masuk lalu duduk antara aku dengan Fatimah sampai aku merasakan dinginnya telapak kaki beliau di perutku. Beliau bersabda, \"Maukah kalian berdua kutunjuki sesuatu yang lebih baik daripada apa yang kalian minta? Apabila kalian hendak tidur -atau apabila kalian berdua telah berbaring-, maka bertasbihlah 33 kali, bertahmidlah 33 kali, dan bertakbirlah 34 kali. Hal itu lebih baik bagi kalian dari seorang pelayan (budak).\"",
+   "attribution": "Muttafaq 'alaih",
+   "grade": "Sahih"
+  },
+  "6082": {
+   "text": "Abdullah bin Khubaib -raḍiyallāhu 'anhu- meriwayatkan, ia berkata, Kami keluar di suatu malam yang hujan dan sangat gelap untuk mencari Rasulullah ﷺ; agar beliau mengimami kami salat sampai aku mendapati beliau. Beliau bersabda, \"Katakanlah?\" Tetapi aku tidak mengucapkan apa-apa. Kemudian beliau berkata lagi, \"Katakanlah.\" Tetapi aku tetap tidak mengucapkan apa-apa. Beliau bersabda, \"Katakanlah.\" Aku bertanya, \"Apa yang aku akan katakan?\" Beliau bersabda, \"Bacalah qul huwallāhu aḥad dan Al-Mu'awwiżatān ketika memasuki petang dan pagi sebanyak tiga kali, maka ia akan mencukupkanmu dari segala sesuatu.\"",
+   "attribution": "HR. Abu Daud, Tirmizi, dan Nasai",
+   "grade": "Sahih"
+  },
+  "6093": {
+   "text": "Abān bin Uṡmān meriwayatkan, Aku mendengar Uṡmān bin Affān -raḍiyallāhu 'anhu- berkata, Aku mendengar Rasulullah ﷺ bersabda, \"Siapa yang membaca: Bismillāhillaẓī lā yaḍurru ma'asmihī syai`un fil-arḍi walā fis-samā`i wa huwas-samī'ul-'alīm (Dengan nama Allah yang tidak akan berbahaya sesuatu pun di bumi dan di langit bersama nama-Nya, dan Dia Maha Mendengar lagi Maha Mengetahui), sebanyak tiga kali, tidak akan ditimpa keburukan secara tiba-tiba hingga memasuki waktu subuh. Siapa yang membacanya ketika pagi tiga kali, tidak akan ditimpa keburukan yang tiba-tiba hingga memasuki waktu sore.\" Ternyata Abān bin Uṡmān ditimpa stroke sebelah, sehingga laki-laki yang mendengar hadis itu menatapnya, maka ia berkata, \"Ada apa engkau menatapku? Demi Allah! Aku tidak pernah berdusta atas nama Uṡmān, tidak juga Uṡmān berdusta atas nama Nabi ﷺ. Akan tetapi, pada hari ketika aku ditimpa musibah itu, aku sedang marah lalu lupa membaca doa ini.\"",
+   "attribution": "HR. Abu Daud, Tirmizi, Nasai dalam Al-Kubrā, Ibnu Majah, dan Ahmad",
+   "grade": "Sahih"
+  },
+  "6167": {
+   "text": "Ḥużaifah bin Yamān -raḍiyallāhu 'anhu- meriwayatkan: Nabi Muhammad ﷺ bila ingin tidur, beliau meletakkan tangan di bawah kepala lalu mengucapkan, \n\"Allāhumma qinī 'ażābaka yauma tajma'u -aw tab'aṡu- 'ibādaka.\" \nArtinya: \"Ya Allah, jagalah diriku dari siksa-Mu pada hari Engkau mengumpulkan -atau membangkitkan- hamba-hamba-Mu.\"",
+   "attribution": "HR. Tirmizi",
+   "grade": "Sahih"
+  },
+  "6203": {
+   "text": "Abu Az-Zubair meriwayatkan, Ibnu Az-Zubair biasa mengucapkan di penghujung setiap salat ketika usai salam, \"Lā ilāha illallāhu waḥdahu lā syarīka lahu, lahul-mulku wa lahul-ḥamdu wa huwa 'alā kulli syai`in qadīr, lā ḥaula wa lā quwwata illā billāh, lā ilāha illallāh, wa lā na'budu illā iyyāhu, lahun-ni'matu wa lahul-faḍlu, wa lahuṡ-ṡanā`ul-hasan, lā ilāha illallāhu mukhliṣīna lahud-dīn wa lau karihal-kāfirūn (Tiada sembahan yang berhak disembah kecuali Allah semata, tiada sekutu bagi-Nya, milik-Nya seluruh kerajaan, kepunyaan-Nya semua pujian, dan Dia Mahakuasa atas segala sesuatu. Tiada daya dan kekuatan kecuali dengan pertolongan Allah. Tidak ada sembahan yang berhak disembah kecuali Allah, dan kami tidak menyembah kecuali Dia. Bagi-Nya segala nikmat, milik-Nya seluruh karunia, dan kepunyaan-Nya pujian yang bagus. Tidak ada sembahan yang berhak disembah kecuali Allah dengan memurnikan agama untuk-Nya, meskipun orang-orang kafir tidak menyukai).\" Ia mengatakan, \"Rasulullah ﷺ bertahlil dengan kalimat-kalimat ini di akhir setiap salat.\"",
+   "attribution": "HR. Muslim",
+   "grade": "Sahih"
+  },
+  "6274": {
+   "text": "Abu Mas'ūd -raḍiyallāhu 'anhu- meriwayatkan, Nabi ﷺ bersabda, \"Siapa saja yang membaca dua ayat terakhir dari Surah Al-Baqarah pada malam hari, niscaya kedua ayat itu telah mencukupinya.\"",
+   "attribution": "Muttafaq 'alaih",
+   "grade": "Sahih"
+  },
+  "6335": {
+   "text": "Dari Suhail, ia berkata, \"Abu Saleh menyuruh kami apabila seseorang di antara kami ingin tidur, hendaknya ia berbaring di sisi kanannya, lalu mengucapkan, \"Ya Allah! Tuhan langit dan bumi, Tuhan yang menguasai 'arasy yang agung, Tuhan kami dan Tuhan segala sesuatu, Tuhan yang membelah biji-bijian dan menumbuhkan benih, Tuhan yang menurunkan kitab Taurat, Injil dan Al-Qur`ān. Aku berlindung kepada-Mu dari kejahatan segala sesuatu yang Engkau pegang ubun-ubunnya. Ya Allah! Engkaulah Al-Awwal, maka tidak ada sesuatu pun yang mendahului-Mu. Ya Allah! Engkaulah Al-Ākhir, maka tidak ada sesuatu setelah-Mu. Ya Allah! Engkaulah Aẓ-Ẓāhir, maka tidak sesuatupun di atas-Mu. Ya Allah! Engkaulah Al-Bāṭin, maka tidak sesuatupun yang tersembunyi bagi-Mu. Ya Allah! Lunaskanlah hutang-hutang kami dan bebaskanlah kami dari kefakiran.\" Abu saleh meriwayatkan hadis ini dari Abu Hurairah dari Rasulullah -ṣallallāhu 'alaihi wa sallam-.",
+   "attribution": "Diriwayatkan oleh Muslim",
+   "grade": "Hadis sahih"
+  },
+  "10947": {
+   "text": "Ṡaubān -raḍiyallāhu 'anhu- meriwayatkan, Apabila Rasulullah ﷺ telah bersalam dari salatnya, beliau beristigfar tiga kali lalu membaca, \"Allāhumma antas-salām wa minkas-salām, tabārakta yā żal-jalāli wal-ikrām (Ya Allah, Engkaulah pemilik keselamatan, dari-Mu keselamatan, Mahamulia Engkau, wahai pemilik keagungan dan kebaikan).\" \nAl-Walīd mengisahkan: Aku bertanya kepada Al-Auzā'iy, \"Bagaimana cara beristigfar?\" Beliau menjawab, \"Yaitu engkau membaca, 'Astagfirullāh, astagfirullāh.'\"",
+   "attribution": "HR. Muslim",
+   "grade": "Sahih"
+  },
+  "10948": {
+   "text": "Abu Hurairah -raḍiyallāhu 'anhu- meriwayatkan, Rasulullah ﷺ bersabda, \"Siapa yang bertasbih sebanyak 33 kali, bertahmid sebanyak 33 kali, dan bertakbir sebanyak 33 kali setelah selesai salat, semuanya berjumlah 99 kali, lalu menggenapkannya 100 dengan membaca: 'Lā ilāha illallāh waḥdahu lā syarīka lahu, lahul-mulku wa lahul-ḥamdu wa huwa 'alā kulli syai`in qadīr (artinya: Tiada Tuhan yang berhak disembah melainkan Allah semata, tiada sekutu bagi-Nya, semua kerajaan dan segala pujian hanya milik-Nya, dan Dia Mahakuasa atas segala sesuatu)', maka akan diampuni dosa-dosanya walaupun sebanyak buih di lautan.\"",
+   "attribution": "HR. Muslim",
+   "grade": "Sahih"
+  },
+  "10950": {
+   "text": "Abu Umāmah -raḍiyallāhu 'anhu- meriwayatkan, Rasulullah ﷺ bersabda, \"Siapa yang membaca ayat Kursi di penghujung setiap salat wajib, maka tak ada penghalang antara dirinya dan masuk surga selain kematian.\"",
+   "attribution": "HR. Nasai dalam Al-Kubrā",
+   "grade": "Sahih"
+  },
+  "65060": {
+   "text": "Aisyah -raḍiyallāhu 'anhā- meriwayatkan, \"Apabila Nabi ﷺ pergi ke tempat tidurnya di setiap malam, beliau menggabungkan kedua telapak tangannya, kemudian beliau meniup keduanya seraya membaca surah Qul huwallāhu aḥad, Qul a'ūżu bi rabbil-falaq, dan Qul a'ūżu bi rabbin-nās. Lalu beliau mengusap bagian tubuhnya yang terjangkau, dimulai dari kepala dan wajahnya, lalu semua bagian depan tubuhnya. Beliau melakukan hal tersebut sebanyak tiga kali.\"",
+   "attribution": "HR. Bukhari",
+   "grade": "Sahih"
+  },
+  "65102": {
+   "text": "Warrād, sekretaris Al-Mugīrah bin Syu'bah, meriwayatkan, Al-Mugīrah bin Syu'bah mendiktekan kepadaku isi surat yang akan dikirim kepada Mu'āwiyah: Nabi ﷺ biasa membaca di akhir setiap salat fardu: Lā ilāha illallāh waḥdahu lā syarīka lah, lahul-mulku wa lahul-ḥamdu, wa huwa 'alā kulli syai`in qadīr. Allāhumma lā māni'a limā a'ṭaita, wa lā mu'ṭiya limā mana'ta, wa lā yanfa'u żal-jaddi minkal-jaddu (Tidak ada Tuhan yang berhak disembah kecuali Allah semata, tidak ada sekutu bagi-Nya. Semua kerajaan milik-Nya dan semua pujian hanya bagi-Nya. Dia Mahakuasa atas segala sesuatu. Ya Allah! Tidak ada yang mampu menghalangi apa yang Engkau beri dan tidak ada yang dapat memberi siapa yang Engkau halangi. Tidak berguna kekayaan dan kemuliaan itu bagi pemiliknya untuk menghindar dari siksa-Mu).",
+   "attribution": "Muttafaq 'alaih",
+   "grade": "Sahih"
+  },
+  "65905": {
+   "text": "Abu Hurairah -raḍiyallāhu 'anhu- meriwayatkan bahwa Rasulullah ﷺ bersabda, \"Siapa yang membaca: 'Lā ilāha illallāh waḥdahū lā syarīka lah, lahul-mulku walahul-ḥamdu, wahuwa 'alā kulli syai`in qadīr' dalam sehari seratus kali, hal itu baginya setara dengan memerdekakan 10 budak, dituliskan baginya 100 kebaikan, dihapus darinya 100 keburukan, dan itu menjadi tameng baginya hari itu dari setan hingga sore. Tidak ada yang datang dengan membawa sesuatu yang lebih utama daripada apa yang ia bawa kecuali seseorang yang mengamalkan lebih banyak dari itu.\"",
+   "attribution": "Muttafaq 'alaih",
+   "grade": "Sahih"
+  }
+ }
+}

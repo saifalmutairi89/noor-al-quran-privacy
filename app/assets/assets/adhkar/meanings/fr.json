@@ -1,0 +1,106 @@
+{
+ "source": "HadeethEnc.com",
+ "adhkar": {
+  "morning": {
+   "2": "6082",
+   "3": "6082",
+   "4": "6082",
+   "5": "3008",
+   "13": "3006",
+   "20": "5517",
+   "25": "5516"
+  },
+  "evening": {
+   "2": "6274",
+   "3": "6082",
+   "4": "6082",
+   "5": "6082",
+   "6": "3008",
+   "14": "3006",
+   "20": "5517",
+   "23": "5516"
+  },
+  "afterPrayer": {
+   "0": "10947",
+   "1": "65102",
+   "2": "6203"
+  },
+  "sleep": {
+   "0": "65060",
+   "2": "6274",
+   "3": "6034",
+   "8": "6335",
+   "9": "5882",
+   "10": "3006"
+  },
+  "waking": {},
+  "fasting": {}
+ },
+ "hadiths": {
+  "3006": {
+   "text": "Abû Hurayra (qu'Allah l'agrée) relate : « Abû Bakr As-Siddîq (qu'Allah l'agrée) demanda : Ô Messager d'Allah ! Conseille-moi des paroles à dire le matin et le soir ! [Le Prophète] dit : Dis : « Ô Allah ! Créateur des cieux et de la terre, Connaisseur de l'invisible et du visible, Seigneur et Maître de toute chose, je témoigne qu'il n'est de divinité [qui soit digne d'adoration] à part Toi, je me réfugie auprès de Toi contre mon propre mal, contre le mal du diable et son polythéisme, et contre le fait de me causer du tort à moi-même ou d'en causer à un musulman. » - Dis-le le matin, ajouta le Prophète (sur lui la paix et le salut), le soir et quand tu te couches ».",
+   "attribution": "Rapporté par At-Tirmidhî - Rapporté par An-Nassâ'î - Rapporté par Abû Dâwud - Rapporté par Aḥmad",
+   "grade": "Authentique"
+  },
+  "3008": {
+   "text": "Abdullâh ibn Mas’ûd (qu’Allah l’agrée) dit : Lorsque le Prophète (sur lui la paix et le salut) se trouvait au soir, il disait : « Nous nous retrouvons au soir, ainsi que la royauté, appartenant à Allah ; les louanges sont pour Allah, il n'est de divinité [digne d'adoration] excepté Allah, Lui Seul, Il n’a point d’associé. », le rapporteur dit : Je pense qu’il disait avec cela : « A Lui la royauté, à Lui les louanges et Il est capable de toute chose. Ô Seigneur ! Je Te demande le meilleur de ce qui se trouve dans cette nuit et le meilleur de ce qui vient après. Et je cherche protection auprès de Toi contre le mal de ce qui se trouve dans cette nuit et le mal de ce qui vient après. Ô Seigneur ! Je cherche protection auprès de Toi contre la paresse et les maux de la vieillesse. Ô Seigneur ! Je cherche protection auprès de Toi contre le châtiment du Feu et le châtiment de la tombe. » Et lorsqu’il se trouvait au matin, il faisait la même chose [mais en disant] « Nous nous retrouvons au matin, ainsi que la royauté, appartenant à Allah. »",
+   "attribution": "Rapporté par Muslim",
+   "grade": "Authentique"
+  },
+  "5516": {
+   "text": "Aboû Hourayrah (qu'Allah l'agrée) relate que le Messager d'Allah (qu'Allah le couvre d'éloges et le préserve) a dit : « Quiconque dit : \"Gloire et Pureté à Allah et par Sa louange,\" cent fois dans une journée  ; ses péchés lui sont alors effacés, même s’ils sont semblables à l’écume de la mer. »",
+   "attribution": "Rapporté par Al Bukhârî et Muslim",
+   "grade": "Authentique"
+  },
+  "5517": {
+   "text": "Aboû Ayyoûb (qu'Allah l'agrée) relate que le Prophète (qu'Allah le couvre d'éloges et le préserve) a dit : « Quiconque dit  : \"Il n’est de divinité, [digne d’adoration] qu'Allah, Seul et sans associé, à Lui la Royauté, à Lui la Louange, et Il est parfaitement capable de toute chose\" dix fois, il sera alors comme s'il avait affranchi quatre individus parmi les enfants d’Ismaël. »",
+   "attribution": "Rapporté par Al Bukhârî et Muslim",
+   "grade": "Authentique"
+  },
+  "5882": {
+   "text": "Anas Ibn Mâlik (qu’Allah l’agrée) relate que lorsque le Prophète (sur lui la paix et le salut) se mettait au lit, il disait : « Louange à Allah qui nous a nourris, nous a abreuvés, nous suffit et nous abrite ! Et combien de gens n’ont personne pour leur suffire ou les abriter ! »",
+   "attribution": "Rapporté par Muslim",
+   "grade": "Authentique"
+  },
+  "6034": {
+   "text": "Abû Hurayrah (qu’Allah l’agrée) relate que le Messager d’Allah (sur lui la paix et le salut) a dit : « Lorsque l’un d'entre vous se couche, qu’il frotte sa couche avec l’intérieur de son pagne car il ne sait pas ce qui lui a succédé sur celle-ci. Qu’il dise ensuite : \" C’est en Ton nom, mon Seigneur, que je pose mon flanc et c’est par Toi que je me relève. Si Tu retiens mon âme, fais-lui miséricorde et si Tu la retournes, alors préserve-la comme Tu préserves Tes serviteurs vertueux ! \" »",
+   "attribution": "Rapporté par Al-Bukhârî et Muslim",
+   "grade": "Authentique"
+  },
+  "6082": {
+   "text": "D'après AbdaLlah ibn Khubayb (qu’Allah l’agrée) qui a dit : Nous sommes sortis par une nuit pluvieuse et profondément ténébreuse. Nous cherchions le Messager d'Allah ﷺ pour qu'il nous dirige en prière. Il a dit : \" Je l'ai finalement rencontré, il m'a alors dit : \" Dis ! \" Je n'ai alors rien dit. Il a répété : \" Dis ! \" Je n'ai toujours rien dit. Il répéta de nouveau : \" Dis ! \" J'ai alors demandé : \" Que dois-je dire ? \" Il a alors dit :  {\" Dis : Il est Allah, Unique ! \"} et récite : « Les Deux Protectrices » trois fois, matin et soir, elles te suffiront pour tout ! »",
+   "attribution": "Rapporté par Abû Dâwud, At-Tirmidhî et An-Nassâ'î",
+   "grade": "Authentique"
+  },
+  "6203": {
+   "text": "Aboû Az-Zoubayr relate : Ibn Az-Zoubayr (qu'Allah l'agrée) disait après chaque prière, au moment où il prononçait le salut final : « Il n'est de divinité qu'Allah, Seul et sans associé ; à Lui la Royauté et à Lui la Louange et Il est capable sur toute chose ; il n'est de Force, ni de Puissance que par Allah ; il n'est de divinité qu'Allah et nous n'adorons que Lui ; à Lui le bienfait, à Lui la grâce, et à Lui le plus beau des éloges ; il n'est de divinité [digne d'adoration] qu'Allah, nous Lui vouons un culte exclusif, quelle qu'en soit l'aversion qu'en éprouvent les mécréants. » Il disait : « Le Messager d'Allah (qu'Allah le couvre d'éloges et le préserve) proclamait l'Unicité d'Allah en disant ces paroles après chaque prière. »",
+   "attribution": "Rapporté par Muslim",
+   "grade": "Authentique"
+  },
+  "6274": {
+   "text": "D'après Aboû Mas'oûd (qu'Allah l'agrée) qui a dit : Le Prophète (qu'Allah le couvre d'éloges et le préserve) a dit : \" Quiconque récite les deux derniers versets de la sourate : Al-Baqarah (la Vache) lors d'une nuit,  ils lui suffiront. \"",
+   "attribution": "Rapporté par Al Bukhârî et Muslim",
+   "grade": "Authentique"
+  },
+  "6335": {
+   "text": "Suhayl relate : « Lorsque l’un d’entre nous voulait dormir, Abû Ṣâliḥ ordonnait qu’il se couche sur le côté droit et qu’il dise : \" Ô Allah ! Seigneur des Cieux, Seigneur de la Terre et Seigneur du Trône immense ! Notre Seigneur et Seigneur de toute chose ! Toi qui fends le grain et le noyau ! Toi qui as fait descendre la Thorah, l’Évangile et le Discernement ! Je me réfugie auprès de toi contre toute chose que tu tiens par le toupet. Ô Allah ! Tu es le Premier, rien n’est avant Toi ! Tu es le Dernier, rien n’est après Toi ! Tu es l’Apparent, rien n’est au-dessus de Toi, Tu es le Caché, rien n’est au-dessous de Toi. Acquitte nos dettes et affranchis-nous de la pauvreté ! \" » Il le rapportait d’Abû Hurayrah, qui lui-même le rapportait du Prophète (sur lui la paix et le salut).",
+   "attribution": "Rapporté par Muslim",
+   "grade": "Authentique"
+  },
+  "10947": {
+   "text": "Thawbân (qu'Allah l'agrée) relate : « Lorsque le Messager d'Allah (qu'Allah le couvre d'éloges et le préserve) terminait sa prière, il implorait le pardon trois fois et disait : \"  Ô Allah ! Tu es Le Pur, et de Toi proviennent la paix et la sécurité. Béni sois-Tu ! Ô détenteur de la Majesté et de la Magnificence !  » Al-Walîd dit : \" J'ai alors demandé à Al-Awzâ'î : \" Comment se fait l'imploration du pardon ? - Il a répondu : Tu dis : j'implore pardon à Allah, j'implore pardon à Allah. \"",
+   "attribution": "Rapporté par Muslim",
+   "grade": "Authentique"
+  },
+  "65060": {
+   "text": "'Â`ichah (qu'Allah l'agrée) relate : « Lorsque le Prophète (qu’Allah le couvre d’éloges et le préserve) se couchait dans son lit, chaque nuit, il joignait ses paumes, ensuite il soufflait dans celles-ci et récitait les sourates : \"Al-Ikhlâṣ\" (Le Monothéisme Pur), \"Al-Falaq\" (L’aube naissante) et \"An-Nâs\" (Les Hommes). Ensuite, il essuyait avec ses mains ce qu'il pouvait de son corps en commençant par sa tête, son visage et le devant de son corps. Il faisait cela trois fois. »",
+   "attribution": "Rapporté par Al Bukhârî",
+   "grade": "Authentique"
+  },
+  "65102": {
+   "text": "D'après Warrād, le scribe d'Al Mughîrah ibn Chu'bah qui a dit : Al Mughîrah ibn Chu'bah m'a dicté dans une lettre à Mu'âwiyah : Le Prophète ﷺ avait l'habitude de dire après chaque prière obligatoire  : \" Il n'y a aucune divinité [digne d'adoration] excepté Allah, Seul et sans associé à Lui. À Lui la royauté et à Lui la louange, et Il est Omnipotent sur toute chose. Ô Allah ! Personne ne peut empêcher ce que Tu donnes et personne ne peut donner ce que Tu empêches. Et la fortune de la personne fortunée n'est d'aucune utilité contre Toi. \"",
+   "attribution": "Rapporté par Al Bukhârî et Muslim",
+   "grade": "Authentique"
+  }
+ }
+}
