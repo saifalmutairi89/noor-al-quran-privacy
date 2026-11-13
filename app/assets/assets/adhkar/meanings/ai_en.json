@@ -1,0 +1,50 @@
+{
+ "morning": {
+  "0": "Praise be to Allah alone, and blessings and peace be upon the one after whom there is no prophet.",
+  "1": "I seek refuge with Allah from Satan, the accursed.",
+  "8": "O Allah, I have entered the morning calling You to witness, and calling to witness the bearers of Your Throne, Your angels and all Your creation, that You are Allah, there is no god but You alone, with no partner, and that Muhammad is Your servant and Your Messenger.",
+  "9": "O Allah, whatever blessing has come to me or to any of Your creation this morning is from You alone, You have no partner; so to You is all praise and to You is all thanks.",
+  "10": "O Allah, grant me well-being in my body. O Allah, grant me well-being in my hearing. O Allah, grant me well-being in my sight. There is no god but You. O Allah, I seek refuge with You from disbelief and poverty, and I seek refuge with You from the punishment of the grave. There is no god but You.",
+  "11": "Allah is sufficient for me; there is no god but He. In Him I put my trust, and He is the Lord of the Mighty Throne.",
+  "16": "O Ever-Living, O Sustainer of all, by Your mercy I seek help: set right all my affairs, and do not leave me to myself even for the blink of an eye.",
+  "17": "We have entered the morning, and all dominion belongs to Allah, Lord of the worlds. O Allah, I ask You for the good of this day: its victory, its help, its light, its blessing and its guidance; and I seek refuge with You from the evil of what is in it and the evil of what comes after it.",
+  "18": "We have entered the morning upon the natural way of Islam, upon the word of sincere devotion, upon the religion of our Prophet Muhammad ﷺ, and upon the way of our father Ibrahim, who was upright, a Muslim, and was not of those who associate others with Allah.",
+  "19": "O Allah, I ask You for beneficial knowledge, good and pure provision, and deeds that are accepted.",
+  "21": "O Allah, send blessings and peace upon our Prophet Muhammad.",
+  "24": "I seek Allah's forgiveness and I turn to Him in repentance."
+ },
+ "evening": {
+  "0": "Praise be to Allah alone, and blessings and peace be upon the one after whom there is no prophet.",
+  "1": "I seek refuge with Allah from Satan, the accursed.",
+  "9": "O Allah, I have entered the evening calling You to witness, and calling to witness the bearers of Your Throne, Your angels and all Your creation, that You are Allah, there is no god but You alone, with no partner, and that Muhammad is Your servant and Your Messenger.",
+  "10": "O Allah, whatever blessing has come to me or to any of Your creation this evening is from You alone, You have no partner; so to You is all praise and to You is all thanks.",
+  "11": "O Allah, grant me well-being in my body. O Allah, grant me well-being in my hearing. O Allah, grant me well-being in my sight. There is no god but You. O Allah, I seek refuge with You from disbelief and poverty, and I seek refuge with You from the punishment of the grave. There is no god but You.",
+  "12": "Allah is sufficient for me; there is no god but He. In Him I put my trust, and He is the Lord of the Mighty Throne.",
+  "17": "O Ever-Living, O Sustainer of all, by Your mercy I seek help: set right all my affairs, and do not leave me to myself even for the blink of an eye.",
+  "18": "We have entered the evening, and all dominion belongs to Allah, Lord of the worlds. O Allah, I ask You for the good of this night: its victory, its help, its light, its blessing and its guidance; and I seek refuge with You from the evil of what is in it and the evil of what comes after it.",
+  "19": "We have entered the evening upon the natural way of Islam, upon the word of sincere devotion, upon the religion of our Prophet Muhammad ﷺ, and upon the way of our father Ibrahim, who was upright, a Muslim, and was not of those who associate others with Allah.",
+  "21": "O Allah, send blessings and peace upon our Prophet Muhammad.",
+  "22": "I seek refuge in the perfect words of Allah from the evil of what He has created."
+ },
+ "afterPrayer": {
+  "4": "After every prayer.",
+  "6": "There is no god but Allah alone, with no partner. His is the dominion and His is the praise; He gives life and causes death, and He has power over all things. (Ten times after the Maghrib and Fajr prayers.)",
+  "7": "O Allah, I ask You for beneficial knowledge, good and pure provision, and deeds that are accepted. (After the closing salam of the Fajr prayer.)"
+ },
+ "sleep": {
+  "4": "O Allah, You created my soul and You take it back. Its death and its life belong to You. If You keep it alive, protect it; and if You cause it to die, forgive it. O Allah, I ask You for well-being.",
+  "6": "In Your name, O Allah, I die and I live.",
+  "11": "Reciting Surat As-Sajdah (Alif Lam Mim, Tanzil) and Surat Al-Mulk (Tabarak alladhi biyadihil-mulk).",
+  "12": "O Allah, I have submitted myself to You, entrusted my affair to You, turned my face to You, and relied on You completely, out of longing for You and fear of You. There is no refuge and no escape from You except to You. I believe in Your Book which You revealed and in Your Prophet whom You sent."
+ },
+ "waking": {
+  "0": "Praise be to Allah who gave us life after He had caused us to die, and to Him is the resurrection.",
+  "1": "There is no god but Allah alone, with no partner. His is the dominion and His is the praise, and He has power over all things. Glory be to Allah, praise be to Allah, there is no god but Allah, Allah is the Greatest, and there is no power and no strength except with Allah, the Most High, the Most Great. My Lord, forgive me.",
+  "2": "Praise be to Allah who gave me well-being in my body, returned my soul to me, and allowed me to remember Him."
+ },
+ "fasting": {
+  "0": "The thirst has gone, the veins are moistened, and the reward is confirmed, if Allah wills.",
+  "1": "O Allah, I ask You by Your mercy, which encompasses all things, to forgive me.",
+  "2": "I am fasting, I am fasting."
+ }
+}

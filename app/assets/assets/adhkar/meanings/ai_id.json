@@ -1,0 +1,50 @@
+{
+ "morning": {
+  "0": "Segala puji hanya bagi Allah, dan shalawat serta salam semoga tercurah kepada Nabi yang tidak ada nabi sesudahnya.",
+  "1": "Aku berlindung kepada Allah dari setan yang terkutuk.",
+  "8": "Ya Allah, di pagi ini aku menjadikan Engkau sebagai saksi, juga para pemikul 'Arsy-Mu, para malaikat-Mu, dan seluruh makhluk-Mu, bahwa Engkaulah Allah, tidak ada sembahan yang berhak disembah selain Engkau semata, tiada sekutu bagi-Mu, dan bahwa Muhammad adalah hamba dan utusan-Mu.",
+  "9": "Ya Allah, nikmat apa pun yang ada padaku atau pada salah satu makhluk-Mu di pagi ini, semuanya dari-Mu semata, tiada sekutu bagi-Mu. Maka bagi-Mu segala puji dan bagi-Mu segala syukur.",
+  "10": "Ya Allah, berilah kesehatan pada badanku. Ya Allah, berilah kesehatan pada pendengaranku. Ya Allah, berilah kesehatan pada penglihatanku. Tidak ada sembahan yang berhak disembah selain Engkau. Ya Allah, aku berlindung kepada-Mu dari kekufuran dan kefakiran, dan aku berlindung kepada-Mu dari azab kubur. Tidak ada sembahan yang berhak disembah selain Engkau.",
+  "11": "Cukuplah Allah bagiku, tidak ada sembahan yang berhak disembah selain Dia. Kepada-Nya aku bertawakal, dan Dia adalah Rabb pemilik 'Arsy yang agung.",
+  "16": "Wahai Yang Maha Hidup, wahai Yang terus-menerus mengurus makhluk-Nya, dengan rahmat-Mu aku memohon pertolongan. Perbaikilah seluruh urusanku, dan jangan Engkau serahkan aku kepada diriku sendiri walau sekejap mata.",
+  "17": "Kami memasuki waktu pagi dan kerajaan menjadi milik Allah, Rabb semesta alam. Ya Allah, aku memohon kepada-Mu kebaikan hari ini: kemenangannya, pertolongannya, cahayanya, keberkahannya, dan petunjuknya; dan aku berlindung kepada-Mu dari keburukan yang ada padanya dan keburukan sesudahnya.",
+  "18": "Kami memasuki waktu pagi di atas fitrah Islam, di atas kalimat ikhlas, di atas agama Nabi kami Muhammad ﷺ, dan di atas millah bapak kami Ibrahim yang lurus lagi muslim, dan dia bukanlah termasuk orang-orang musyrik.",
+  "19": "Ya Allah, aku memohon kepada-Mu ilmu yang bermanfaat, rezeki yang baik, dan amal yang diterima.",
+  "21": "Ya Allah, limpahkanlah shalawat dan salam kepada Nabi kami Muhammad.",
+  "24": "Aku memohon ampun kepada Allah dan bertobat kepada-Nya."
+ },
+ "evening": {
+  "0": "Segala puji hanya bagi Allah, dan shalawat serta salam semoga tercurah kepada Nabi yang tidak ada nabi sesudahnya.",
+  "1": "Aku berlindung kepada Allah dari setan yang terkutuk.",
+  "9": "Ya Allah, di sore ini aku menjadikan Engkau sebagai saksi, juga para pemikul 'Arsy-Mu, para malaikat-Mu, dan seluruh makhluk-Mu, bahwa Engkaulah Allah, tidak ada sembahan yang berhak disembah selain Engkau semata, tiada sekutu bagi-Mu, dan bahwa Muhammad adalah hamba dan utusan-Mu.",
+  "10": "Ya Allah, nikmat apa pun yang ada padaku atau pada salah satu makhluk-Mu di sore ini, semuanya dari-Mu semata, tiada sekutu bagi-Mu. Maka bagi-Mu segala puji dan bagi-Mu segala syukur.",
+  "11": "Ya Allah, berilah kesehatan pada badanku. Ya Allah, berilah kesehatan pada pendengaranku. Ya Allah, berilah kesehatan pada penglihatanku. Tidak ada sembahan yang berhak disembah selain Engkau. Ya Allah, aku berlindung kepada-Mu dari kekufuran dan kefakiran, dan aku berlindung kepada-Mu dari azab kubur. Tidak ada sembahan yang berhak disembah selain Engkau.",
+  "12": "Cukuplah Allah bagiku, tidak ada sembahan yang berhak disembah selain Dia. Kepada-Nya aku bertawakal, dan Dia adalah Rabb pemilik 'Arsy yang agung.",
+  "17": "Wahai Yang Maha Hidup, wahai Yang terus-menerus mengurus makhluk-Nya, dengan rahmat-Mu aku memohon pertolongan. Perbaikilah seluruh urusanku, dan jangan Engkau serahkan aku kepada diriku sendiri walau sekejap mata.",
+  "18": "Kami memasuki waktu sore dan kerajaan menjadi milik Allah, Rabb semesta alam. Ya Allah, aku memohon kepada-Mu kebaikan malam ini: kemenangannya, pertolongannya, cahayanya, keberkahannya, dan petunjuknya; dan aku berlindung kepada-Mu dari keburukan yang ada padanya dan keburukan sesudahnya.",
+  "19": "Kami memasuki waktu sore di atas fitrah Islam, di atas kalimat ikhlas, di atas agama Nabi kami Muhammad ﷺ, dan di atas millah bapak kami Ibrahim yang lurus lagi muslim, dan dia bukanlah termasuk orang-orang musyrik.",
+  "21": "Ya Allah, limpahkanlah shalawat dan salam kepada Nabi kami Muhammad.",
+  "22": "Aku berlindung dengan kalimat-kalimat Allah yang sempurna dari keburukan apa yang Dia ciptakan."
+ },
+ "afterPrayer": {
+  "4": "Setelah setiap shalat.",
+  "6": "Tidak ada sembahan yang berhak disembah selain Allah semata, tiada sekutu bagi-Nya. Milik-Nya kerajaan dan bagi-Nya segala puji; Dia menghidupkan dan mematikan, dan Dia Mahakuasa atas segala sesuatu. (Sepuluh kali setelah shalat Maghrib dan Subuh.)",
+  "7": "Ya Allah, aku memohon kepada-Mu ilmu yang bermanfaat, rezeki yang baik, dan amal yang diterima. (Setelah salam dari shalat Subuh.)"
+ },
+ "sleep": {
+  "4": "Ya Allah, sesungguhnya Engkau telah menciptakan jiwaku dan Engkaulah yang mewafatkannya. Milik-Mu kematian dan kehidupannya. Jika Engkau menghidupkannya, maka jagalah ia; dan jika Engkau mematikannya, maka ampunilah ia. Ya Allah, aku memohon kepada-Mu keselamatan.",
+  "6": "Dengan nama-Mu, ya Allah, aku mati dan aku hidup.",
+  "11": "Membaca surah As-Sajdah (Alif Lam Mim Tanzil) dan surah Al-Mulk (Tabarakalladzi biyadihil mulk).",
+  "12": "Ya Allah, aku menyerahkan diriku kepada-Mu, aku serahkan urusanku kepada-Mu, aku hadapkan wajahku kepada-Mu, dan aku sandarkan punggungku kepada-Mu, karena berharap dan takut kepada-Mu. Tidak ada tempat berlindung dan tempat menyelamatkan diri dari-Mu kecuali kepada-Mu. Aku beriman kepada kitab-Mu yang telah Engkau turunkan dan kepada Nabi-Mu yang telah Engkau utus."
+ },
+ "waking": {
+  "0": "Segala puji bagi Allah yang telah menghidupkan kami setelah mematikan kami, dan kepada-Nya kebangkitan.",
+  "1": "Tidak ada sembahan yang berhak disembah selain Allah semata, tiada sekutu bagi-Nya. Milik-Nya kerajaan dan bagi-Nya segala puji, dan Dia Mahakuasa atas segala sesuatu. Mahasuci Allah, segala puji bagi Allah, tidak ada sembahan yang berhak disembah selain Allah, Allah Mahabesar, dan tidak ada daya dan kekuatan kecuali dengan pertolongan Allah Yang Mahatinggi lagi Mahaagung. Wahai Rabbku, ampunilah aku.",
+  "2": "Segala puji bagi Allah yang telah memberikan kesehatan pada jasadku, mengembalikan ruhku, dan mengizinkanku untuk berzikir kepada-Nya."
+ },
+ "fasting": {
+  "0": "Telah hilang rasa haus, urat-urat telah basah, dan pahala telah tetap, insya Allah.",
+  "1": "Ya Allah, aku memohon kepada-Mu dengan rahmat-Mu yang meliputi segala sesuatu, agar Engkau mengampuniku.",
+  "2": "Sesungguhnya aku sedang berpuasa, sesungguhnya aku sedang berpuasa."
+ }
+}
