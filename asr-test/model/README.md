@@ -11,3 +11,10 @@ fine-tune predates Whisper's language and task settings.
 
 The page loads Transformers.js 4.3.2 (Apache-2.0) and ONNX Runtime Web (MIT)
 from the jsDelivr CDN.
+
+## For the phone apps (2026-11-14)
+
+`onnx/decoder_model_merged_quantized_next.onnx` is `decoder_model_merged_quantized.onnx` with two outputs added
+after `logits`: `next_token` (best token at the last position, leaving out `suppress_tokens`) and `first_token`
+(also leaving out `begin_suppress_tokens`). Made by `backend/recitation-engine/add_argmax.py`; same weights, same
+Apache-2.0 license. The iPhone and Android apps download it with the encoder and `vocab.json`.
